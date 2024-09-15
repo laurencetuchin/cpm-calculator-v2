@@ -1,0 +1,76 @@
+
+# Astro SEO-Optimized Blog Post Rules
+
+1. Use descriptive and keyword-rich titles
+   - Include target keyword in the title
+   - Keep titles under 60 characters for optimal display in search results
+
+2. Optimize meta descriptions
+   - Write compelling meta descriptions between 150-160 characters
+   - Include target keyword and a call-to-action
+
+3. Utilize header tags (H1, H2, H3) effectively
+   - Use only one H1 tag per post (usually the title)
+   - Structure content with H2 and H3 tags for readability and SEO
+
+4. Optimize images
+   - Use descriptive, keyword-rich file names
+   - Add alt text to all images
+   - Compress images for faster loading
+
+5. Internal linking
+   - Link to relevant internal pages and other blog posts
+   - Use descriptive anchor text for links
+
+6. External linking
+   - Link to authoritative sources to support your content
+   - Open external links in new tabs
+
+7. URL structure
+   - Use short, descriptive URLs with keywords
+   - Separate words with hyphens
+
+8. Content quality and length
+   - Aim for at least 1500 words for in-depth topics
+   - Ensure content is original, informative, and valuable to readers
+
+9. Use schema markup
+   - Implement appropriate schema for blog posts (e.g., Article, BlogPosting)
+
+10. Optimize for featured snippets
+    - Use question-and-answer format where appropriate
+    - Provide concise, direct answers to common questions
+
+11. Mobile optimization
+    - Ensure blog posts are responsive and mobile-friendly
+
+12. Page speed
+    - Optimize images, minify CSS and JavaScript
+    - Utilize Astro's built-in performance features
+
+13. Social media optimization
+    - Include Open Graph and Twitter Card meta tags
+    - Create shareable content with eye-catching visuals
+
+14. Update content regularly
+    - Keep blog posts up-to-date with fresh information
+    - Consider adding a "Last Updated" date to posts
+
+15. Encourage user engagement
+    - Enable comments (if appropriate for your site)
+    - Include social sharing buttons
+
+16. Use canonical tags
+    - Implement canonical tags to avoid duplicate content issues
+
+17. Implement breadcrumbs
+    - Use breadcrumbs for better navigation and SEO
+
+18. Create a sitemap
+    - Ensure your blog posts are included in your sitemap.xml
+
+19. Optimize for Core Web Vitals
+    - Focus on Largest Contentful Paint, First Input Delay, and Cumulative Layout Shift
+
+20. Use relevant categories and tags
+    - Organize content with SEO-friendly categories and tags
