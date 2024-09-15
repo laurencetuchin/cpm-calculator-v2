@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-const CPMCalculator = () => {
+const CostPerImpressionCalculator = () => {
   const [cost, setCost] = useState<number | null>(null);
   const [impressions, setImpressions] = useState<number | null>(null);
-  const [cpm, setCpm] = useState<number | null>(null);
+  const [costPerImpression, setCostPerImpression] = useState<number | null>(null);
 
   useEffect(() => {
     if (cost !== null && impressions !== null && impressions !== 0) {
-      const calculatedCPM = (cost / impressions) * 1000;
-      setCpm(calculatedCPM);
+      const calculatedCostPerImpression = cost / impressions;
+      setCostPerImpression(calculatedCostPerImpression);
     } else {
-      setCpm(null);
+      setCostPerImpression(null);
     }
   }, [cost, impressions]);
 
@@ -22,7 +22,7 @@ const CPMCalculator = () => {
   const handleReset = () => {
     setCost(null);
     setImpressions(null);
-    setCpm(null);
+    setCostPerImpression(null);
   };
 
   const handlePresetClick = (type: 'cost' | 'impressions', value: number) => {
@@ -31,8 +31,8 @@ const CPMCalculator = () => {
   };
 
   return (
-    <div id="cpm" className="max-w-md mx-auto p-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-md rounded-lg mb-4 relative">
-      <h2 className="text-2xl font-bold mb-4">CPM Calculator</h2>
+    <div id="costPerImpression" className="max-w-md mx-auto p-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-md rounded-lg mb-4 relative">
+      <h2 className="text-2xl font-bold mb-4">Cost Per Impression Calculator</h2>
       <div className="space-y-4">
         <div>
           <label htmlFor="cost" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Campaign Cost ($)</label>
@@ -80,8 +80,8 @@ const CPMCalculator = () => {
         </div>
       </div>
       <div className="mt-6">
-        {cpm !== null && (
-          <p className="text-lg font-semibold">Calculated CPM: ${cpm.toFixed(2)}</p>
+        {costPerImpression !== null && (
+          <p className="text-lg font-semibold">Cost Per Impression: ${costPerImpression.toFixed(4)}</p>
         )}
       </div>
       <button
@@ -94,4 +94,4 @@ const CPMCalculator = () => {
   );
 };
 
-export default CPMCalculator;
+export default CostPerImpressionCalculator;
