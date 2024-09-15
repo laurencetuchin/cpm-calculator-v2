@@ -1,6 +1,9 @@
 
 # Astro SEO-Optimized Blog Post Rules
 
+0. The canonical url for the domain
+  - https://cpmcalculator.online/
+
 1. Use descriptive and keyword-rich titles
    - Include target keyword in the title
    - Keep titles under 60 characters for optimal display in search results
