@@ -7,6 +7,12 @@ tags:
   - front-end
   - tools
   - resources
+metadata:   
+  canonical: https://cpmcalculator.online/useful-resources-to-create-websites
+  robots: {
+    index: false,
+    follow: false
+  }
 ---
 
 ## Magna nunc senectus torquent per fusce sapien ligula tempus cra
