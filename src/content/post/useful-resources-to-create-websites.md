@@ -10,8 +10,7 @@ tags:
 metadata:   
   canonical: https://cpmcalculator.online/useful-resources-to-create-websites
   robots: {
-    index: false,
-    follow: false
+    index: false
   }
 ---
 
