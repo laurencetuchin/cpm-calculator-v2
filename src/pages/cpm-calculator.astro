@@ -1,0 +1,78 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import CPMCalculator from '~/components/common/CPMCalculator';
+
+const metadata = {
+  title: 'CPM Calculator | Calculate Cost Per Thousand Impressions',
+  description: 'Free online CPM calculator to easily calculate Cost Per Mille (CPM) for your advertising campaigns. Learn how to calculate CPM, CPM benchmarks, and optimization tips.',
+  canonical: 'https://cpmcalculator.online/cpm-calculator',
+  robots: {
+    index: true,
+    follow: true
+  }
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    <h1 class="text-4xl font-bold leading-tighter tracking-tighter mb-8 font-heading">
+      CPM Calculator: Calculate Your Cost Per Thousand Impressions
+    </h1>
+
+    <div class="mb-10">
+      <p class="text-lg mb-6">
+        Calculate your Cost Per Mille (CPM) quickly and accurately with our free online calculator. Simply enter your campaign cost and impressions to get your CPM instantly.
+      </p>
+      
+      <CPMCalculator client:load />
+    </div>
+
+    <div class="prose prose-lg dark:prose-invert max-w-none">
+      <h2>What is CPM?</h2>
+      <p>
+        CPM (Cost Per Mille) is a key advertising metric that measures the cost per 1,000 impressions. It helps advertisers understand how much they're paying to reach their audience and compare costs across different ad platforms and campaigns.
+      </p>
+
+      <h2>How to Calculate CPM</h2>
+      <p>The formula for calculating CPM is:</p>
+      <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-6">
+        <code>CPM = (Total Campaign Cost / Total Impressions) × 1,000</code>
+      </div>
+
+      <h2>Common CPM Terms</h2>
+      <ul>
+        <li><strong>Impressions:</strong> The number of times your ad is displayed</li>
+        <li><strong>eCPM:</strong> Effective Cost Per Mille - actual earnings per 1,000 impressions</li>
+        <li><strong>vCPM:</strong> Viewable Cost Per Mille - cost per 1,000 viewable impressions</li>
+      </ul>
+
+      <h2>Average CPM Rates by Platform (2024)</h2>
+      <ul>
+        <li>Facebook Ads: $7.19 - $14.50</li>
+        <li>Instagram Ads: $6.70 - $12.40</li>
+        <li>Google Display Network: $2.80 - $5.00</li>
+        <li>YouTube Ads: $6.00 - $12.00</li>
+        <li>LinkedIn Ads: $6.50 - $15.00</li>
+      </ul>
+
+      <h2>Tips for Optimizing Your CPM</h2>
+      <ol>
+        <li>Target the right audience demographics</li>
+        <li>Test different ad formats and placements</li>
+        <li>Monitor and adjust campaigns regularly</li>
+        <li>Improve ad relevance and quality scores</li>
+        <li>Choose optimal campaign timing</li>
+      </ol>
+
+      <h2>Frequently Asked Questions</h2>
+      <h3>What is a good CPM rate?</h3>
+      <p>A good CPM rate varies by industry, platform, and target audience. Generally, $2-$10 is considered reasonable for display ads, while social media CPMs can range from $5-$20.</p>
+
+      <h3>Why use CPM bidding?</h3>
+      <p>CPM bidding is ideal for brand awareness campaigns where visibility is the primary goal. It's particularly effective for reaching large audiences and building brand recognition.</p>
+
+      <h3>How can I lower my CPM?</h3>
+      <p>To lower your CPM, focus on improving ad relevance, targeting precision, and ad quality. Test different audience segments and optimize your campaigns based on performance data.</p>
+    </div>
+  </section>
+</Layout>
