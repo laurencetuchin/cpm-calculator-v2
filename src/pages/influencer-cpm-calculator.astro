@@ -1,0 +1,60 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import InfluencerCPMCalculator from '~/components/common/InfluencerCPMCalculator';
+
+const metadata = {
+  title: 'Influencer CPM Calculator - Calculate Cost Per Mille for Influencer Marketing',
+  description: 'Calculate influencer marketing CPM and engagement-adjusted CPM with our free calculator. Make data-driven decisions for your influencer campaigns and optimize your marketing spend.',
+  canonical: 'https://cpmcalculator.online/influencer-cpm-calculator',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    <h1 class="font-bold font-heading text-4xl md:text-5xl leading-tighter tracking-tighter mb-4 text-center">
+      Influencer CPM Calculator
+    </h1>
+    
+    <div class="text-center mb-8 text-gray-700 dark:text-gray-300">
+      <p class="text-lg">
+        Calculate and analyze your influencer marketing campaign costs with our advanced CPM calculator. Get insights into both standard CPM and engagement-adjusted metrics.
+      </p>
+    </div>
+
+    <InfluencerCPMCalculator client:load />
+
+    <div class="mt-12 prose prose-lg max-w-4xl mx-auto dark:prose-invert">
+      <h2>Understanding Influencer Marketing CPM</h2>
+      <p>
+        CPM (Cost Per Mille) in influencer marketing helps brands understand the cost of reaching 1,000 followers or viewers through an influencer's content. Our calculator provides both standard CPM and engagement-adjusted CPM metrics to give you a complete picture of your campaign's efficiency.
+      </p>
+
+      <h2>Why Calculate Influencer CPM?</h2>
+      <ul>
+        <li>Compare costs across different influencers and platforms</li>
+        <li>Evaluate campaign performance with engagement-adjusted metrics</li>
+        <li>Make data-driven decisions about influencer partnerships</li>
+        <li>Optimize your influencer marketing budget allocation</li>
+      </ul>
+
+      <h2>How to Use This Calculator</h2>
+      <ol>
+        <li>Enter the expected impressions or reach for your influencer campaign</li>
+        <li>Input your total campaign cost, including influencer fees and additional expenses</li>
+        <li>Add the expected engagement rate for a more detailed analysis</li>
+        <li>Get instant results for both standard and engagement-adjusted CPM</li>
+      </ol>
+
+      <h2>Tips for Optimizing Influencer CPM</h2>
+      <p>
+        To get the most value from your influencer campaigns, consider these factors:
+      </p>
+      <ul>
+        <li>Audience alignment and authenticity</li>
+        <li>Historical engagement rates</li>
+        <li>Platform-specific performance metrics</li>
+        <li>Seasonal trends and timing</li>
+      </ul>
+    </div>
+  </section>
+</Layout>
