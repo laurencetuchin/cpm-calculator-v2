@@ -7,48 +7,44 @@ export const headerData = {
       href: getPermalink('/get-started')
     },
     {
-      text: 'CPM to CPC Calculator',
+      text: 'CPM Calculator',
+      href: getPermalink('/cpm-calculator')
+    },
+    {
+      text: 'CPM to CPC Calculator', 
       href: getPermalink('/cpm-to-cpc-calculator')
     },
     {
       text: 'Influencer CPM Calculator',
       href: getPermalink('/influencer-cpm-calculator')
     },
-    
-
-
     {
       text: 'Blog',
       href: getPermalink('/blog')
-    
-}]
-      ,
-  actions: [{ text: 'Try now', href: 'https://cpmcalculator.online', target: '_blank' }]}
+    }
+  ],
+  actions: [{ text: 'Try now', href: 'https://cpmcalculator.online', target: '_blank' }]
+}
 
 export const footerData = {
   links: [
-
     {
       title: 'Blog',
       links: [
         { text: 'Use case Excel', href: '/cpm-formula-excel' },
         { text: 'Marketing Data', href: '#' },
         { text: 'Influencer Marketing', href: '/influencer-cpm-calculator' },
-
-
       ],
     },
     {
-      title: 'About',
+      title: 'About', 
       links: [
         { text: 'About', href: '/about' },
         { text: 'Top 10 Marketing Books', href: '/top-10-marketing-books' },
         { text: 'How to Sell Online', href: '#' },
         { text: 'Best Personal Development Books', href: '#' },
-
       ],
     },
-
   ],
   secondaryLinks: [
     { text: 'Terms', href: getPermalink('/terms') },
@@ -59,7 +55,6 @@ export const footerData = {
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/profile.php?id=61564261973878', target: '_blank', rel: 'noopener noreferrer' },
   ],
   footNote: `
-
     Copyright CPM Calculator Online 2024.
   `,
 };
