@@ -1,13 +1,13 @@
 ---
-
-
 import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'About us',
+  title: 'About CPM Calculator - Your Marketing Analytics Partner',
+  description: 'Learn how CPM Calculator helps marketers optimize their ad campaigns with precise cost per mille calculations and data-driven insights.',
+  canonical: 'https://cpmcalculator.online/about',
 };
 ---
 
@@ -17,61 +17,52 @@ const metadata = {
   <Hero
     tagline="About us"
     image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
+      src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?fit=crop&w=2070&q=80',
+      alt: 'Marketing analytics dashboard showing CPM calculations',
     }}
   >
     <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white highlight"> Beautiful Website Templates</span>
+      Empowering marketers with <br />
+      <span class="text-accent dark:text-white highlight">precise CPM insights</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
+      At CPM Calculator, we understand the challenges marketers face in optimizing their advertising spend. Founded by digital marketing veterans, our mission is to provide simple yet powerful tools that help you make data-driven decisions about your CPM campaigns. Whether you're managing social media ads, display campaigns, or traditional media buys, we're here to help you maximize your ROI.
     </Fragment>
   </Hero>
 
   <!-- Stats Widget ****************** -->
 
   <Stats
-    title="Statistics about us"
+    title="Our Impact"
     stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
+      { title: 'Monthly Users', amount: '50K+' },
+      { title: 'Calculations Made', amount: '1M+' },
+      { title: 'Marketing Tools', amount: '15+' },
+      { title: 'Years of Experience', amount: '10+' },
     ]}
   />
-
-  <!-- Features3 Widget ************** -->
-
-  
-
-  <!-- Features3 Widget ************** -->
-
 
   <!-- Steps2 Widget ****************** -->
 
   <Steps2
-    title="Our values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
+    title="Our Core Values"
+    subtitle="We believe in making marketing analytics accessible, actionable, and valuable for everyone - from solo entrepreneurs to enterprise teams."
     items={[
       {
-        title: 'Customer-centric approach',
+        title: 'Accuracy First',
         description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
+          'We prioritize precise calculations and reliable data to ensure you can make confident decisions about your advertising investments.',
       },
       {
-        title: 'Constant Improvement',
+        title: 'User-Centric Innovation',
         description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
+          'Every feature we develop is based on real user feedback and needs, making our tools truly practical for marketing professionals.',
       },
       {
-        title: 'Ethical Practices',
+        title: 'Educational Empowerment',
         description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+          'Beyond calculations, we provide actionable insights and resources to help you understand and optimize your marketing metrics.',
       },
     ]}
   />
@@ -79,39 +70,32 @@ const metadata = {
   <!-- Steps2 Widget ****************** -->
 
   <Steps2
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
+    title="Why Choose Us"
+    subtitle="Join thousands of marketers who trust CPM Calculator to optimize their advertising campaigns and improve their ROI."
     isReversed={true}
     callToAction={{
-      text: 'See more',
+      text: 'Try Our Calculator',
       href: '/',
     }}
     items={[
       {
-        title: 'Global reach',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
-        icon: 'tabler:globe',
+        title: 'Comprehensive Tools',
+        description: 'Access a suite of marketing calculators and tools designed specifically for digital advertising optimization.',
+        icon: 'tabler:calculator',
       },
       {
-        title: 'Positive customer feedback and reviews',
+        title: 'Expert Resources',
         description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
-        icon: 'tabler:message-star',
+          'Benefit from our regularly updated blog posts, guides, and case studies written by experienced marketing professionals.',
+        icon: 'tabler:book',
       },
       {
-        title: 'Awards and recognition as industry experts',
+        title: 'Community-Driven',
         description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
-        icon: 'tabler:award',
+          'Join a growing community of marketers sharing insights and strategies for better campaign performance.',
+        icon: 'tabler:users',
       },
     ]}
   />
-
-  <!-- Features2 Widget ************** -->
-
- 
-
-  <!-- Features2 Widget ************** -->
-
 
 </Layout>
