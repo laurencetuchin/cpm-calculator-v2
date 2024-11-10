@@ -3,7 +3,7 @@ title: 'Terms and Conditions'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-_Last updated_: January 06, 2023
+_Last updated_: January 06, 2024
 
 Please read these terms and conditions carefully before using Our Service.
 
@@ -21,17 +21,17 @@ For the purposes of these Terms and Conditions:
 
 - **Country** refers to: California, United States
 
-- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to AstroWind LLC, 1 Cupertino, CA 95014.
+- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to CPM Calculator Online.
 
 - **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.
 
 - **Service** refers to the Website.
 
-- **Terms and Conditions** (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service. This Terms and Conditions agreement is a Demo.
+- **Terms and Conditions** (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the Company regarding the use of the Service.
 
 - **Third-party Social Media Service** means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.
 
-- **Website** refers to AstroWind, accessible from [https://astrowind.vercel.app](https://astrowind.vercel.app)
+- **Website** refers to CPM Calculator Online, accessible from [https://cpmcalculator.online](https://cpmcalculator.online)
 
 - **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
 
@@ -43,9 +43,13 @@ Your access to and use of the Service is conditioned on Your acceptance of and c
 
 By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.
 
-You represent that you are over the age of 18\. The Company does not permit those under 18 to use the Service.
+You represent that you are over the age of 18. The Company does not permit those under 18 to use the Service.
 
 Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when You use the Application or the Website and tells You about Your privacy rights and how the law protects You. Please read Our Privacy Policy carefully before using Our Service.
+
+## Calculator Usage
+
+The CPM calculators and other tools provided on this Service are for informational purposes only. While we strive to ensure accuracy, we make no guarantees about the results provided. Users should verify all calculations independently and not rely solely on our tools for making business decisions.
 
 ## Links to Other Websites
 
@@ -115,6 +119,4 @@ By continuing to access or use Our Service after those revisions become effectiv
 
 ## Contact Us
 
-If you have any questions about these Terms and Conditions, You can contact us:
-
-- By email: somecoolemail@domain.com
+If you have any questions about these Terms and Conditions, You can contact us through our website contact form.

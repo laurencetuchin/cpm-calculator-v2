@@ -10,6 +10,10 @@ export const headerData = {
       text: 'CPM to CPC Calculator',
       href: getPermalink('/cpm-to-cpc-calculator')
     },
+    {
+      text: 'Influencer CPM Calculator',
+      href: getPermalink('/influencer-cpm-calculator')
+    },
     
 
 
@@ -27,9 +31,9 @@ export const footerData = {
     {
       title: 'Blog',
       links: [
-        { text: 'Use case Excel', href: '#blog-post-excel' },
+        { text: 'Use case Excel', href: '/cpm-formula-excel' },
         { text: 'Marketing Data', href: '#' },
-        { text: 'Influencer Marketing', href: '#' },
+        { text: 'Influencer Marketing', href: '/influencer-cpm-calculator' },
 
 
       ],
@@ -37,8 +41,8 @@ export const footerData = {
     {
       title: 'About',
       links: [
-        { text: 'About', href: '#' },
-        { text: 'Top 10 Marketing Books', href: '#' },
+        { text: 'About', href: '/about' },
+        { text: 'Top 10 Marketing Books', href: '/top-10-marketing-books' },
         { text: 'How to Sell Online', href: '#' },
         { text: 'Best Personal Development Books', href: '#' },
 
