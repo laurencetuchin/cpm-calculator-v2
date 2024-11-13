@@ -5,7 +5,7 @@
 
 🌟 _Most *starred* & *forked* Astro theme in 2022 & 2023_. 🌟
 
-**AstroWind** is a free and open-source template to make your website using **[Astro 4.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/)**. Ready to start a new project and designed taking into account web best practices.
+A CPM (Cost Per Mille) Calculator is an essential tool for digital marketers and advertisers who need to quickly analyze their campaign performance. CPM Calculator Online [CPMCalculatorOnline](https://cpmcalculator.online) is a free tool that helps marketers better understand their data. This intuitive calculator helps you determine the cost per thousand impressions for your ad campaigns, enabling you to make data-driven decisions about your advertising budget and strategy. Simply input your total advertising spend and the number of impressions received, and our calculator will instantly compute your CPM, making it easier to compare costs across different platforms and campaigns. Whether you're running social media ads, display advertising, or programmatic campaigns, this tool streamlines your marketing analytics process. 
 
 - ✅ **Production-ready** scores in **PageSpeed Insights** reports.
 - ✅ Integration with **Tailwind CSS** supporting **Dark mode** and **_RTL_**.
