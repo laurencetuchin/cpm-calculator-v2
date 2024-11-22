@@ -5,8 +5,8 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'About CPM Calculator - Your Marketing Analytics Partner',
-  description: 'Learn how CPM Calculator helps marketers optimize their ad campaigns with precise cost per mille calculations and data-driven insights.',
+  title: 'About CPM Calculator - Your Complete Marketing Calculator Suite',
+  description: 'Discover how CPM Calculator and our suite of marketing tools help you save time calculating metrics, so you can focus on what matters - optimizing your campaigns and driving results.',
   canonical: 'https://cpmcalculator.online/about',
 };
 ---
@@ -18,28 +18,28 @@ const metadata = {
     tagline="About us"
     image={{
       src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?fit=crop&w=2070&q=80',
-      alt: 'Marketing analytics dashboard showing CPM calculations',
+      alt: 'Marketing analytics dashboard showing various marketing calculations',
     }}
   >
     <Fragment slot="title">
-      Empowering marketers with <br />
-      <span class="text-accent dark:text-white highlight">precise CPM insights</span>
+      Streamlining marketing metrics <br />
+      <span class="text-accent dark:text-white highlight">so you can focus on growth</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      At CPM Calculator, we understand the challenges marketers face in optimizing their advertising spend. Founded by digital marketing veterans, our mission is to provide simple yet powerful tools that help you make data-driven decisions about your CPM campaigns. Whether you're managing social media ads, display campaigns, or traditional media buys, we're here to help you maximize your ROI.
+      At CPM Calculator, we're more than just a CPM calculator - we're your comprehensive marketing metrics solution. We understand that time spent calculating various advertising metrics is time away from optimizing your campaigns. That's why we've built a suite of essential marketing calculators and tools that handle the math, so you can focus on strategy and creativity. From CPM to CPC, and influencer marketing metrics, we've got you covered.
     </Fragment>
   </Hero>
 
   <!-- Stats Widget ****************** -->
 
   <Stats
-    title="Our Impact"
+    title="Our Growing Impact"
     stats={[
       { title: 'Monthly Users', amount: '50K+' },
-      { title: 'Calculations Made', amount: '1M+' },
-      { title: 'Marketing Tools', amount: '15+' },
-      { title: 'Years of Experience', amount: '10+' },
+      { title: 'Hours Saved Monthly', amount: '10K+' },
+      { title: 'Marketing Calculators', amount: '15+' },
+      { title: 'Satisfied Marketers', amount: '100K+' },
     ]}
   />
 
@@ -47,22 +47,22 @@ const metadata = {
 
   <Steps2
     title="Our Core Values"
-    subtitle="We believe in making marketing analytics accessible, actionable, and valuable for everyone - from solo entrepreneurs to enterprise teams."
+    subtitle="We're committed to making marketing calculations effortless, allowing marketers of all levels to spend more time on strategic campaign optimization."
     items={[
       {
-        title: 'Accuracy First',
+        title: 'Time-Saving Efficiency',
         description:
-          'We prioritize precise calculations and reliable data to ensure you can make confident decisions about your advertising investments.',
+          'Our suite of calculators automates complex marketing metrics, turning minutes of calculations into seconds - giving you more time for strategic planning.',
       },
       {
-        title: 'User-Centric Innovation',
+        title: 'Comprehensive Solutions',
         description:
-          'Every feature we develop is based on real user feedback and needs, making our tools truly practical for marketing professionals.',
+          'From CPM to CPC, influencer metrics to impression costs - we provide all the calculation tools modern marketers need in one convenient platform.',
       },
       {
-        title: 'Educational Empowerment',
+        title: 'Marketer Empowerment',
         description:
-          'Beyond calculations, we provide actionable insights and resources to help you understand and optimize your marketing metrics.',
+          'Beyond calculations, we offer insights, guides, and resources to help you understand your metrics and make data-driven campaign decisions.',
       },
     ]}
   />
@@ -70,30 +70,30 @@ const metadata = {
   <!-- Steps2 Widget ****************** -->
 
   <Steps2
-    title="Why Choose Us"
-    subtitle="Join thousands of marketers who trust CPM Calculator to optimize their advertising campaigns and improve their ROI."
+    title="Why Choose Our Platform"
+    subtitle="Join thousands of marketers who trust our suite of calculators to streamline their workflow and improve campaign performance."
     isReversed={true}
     callToAction={{
-      text: 'Try Our Calculator',
+      text: 'Try Our Calculators',
       href: '/',
     }}
     items={[
       {
-        title: 'Comprehensive Tools',
-        description: 'Access a suite of marketing calculators and tools designed specifically for digital advertising optimization.',
+        title: 'All-in-One Solution',
+        description: 'Access multiple marketing calculators in one place - CPM, CPC, Cost per Impression, Influencer CPM, and more.',
         icon: 'tabler:calculator',
       },
       {
-        title: 'Expert Resources',
+        title: 'Time-Saving Tools',
         description:
-          'Benefit from our regularly updated blog posts, guides, and case studies written by experienced marketing professionals.',
-        icon: 'tabler:book',
+          'Spend less time on calculations and more time optimizing your campaigns with our efficient, user-friendly tools.',
+        icon: 'tabler:clock',
       },
       {
-        title: 'Community-Driven',
+        title: 'Marketing Resources',
         description:
-          'Join a growing community of marketers sharing insights and strategies for better campaign performance.',
-        icon: 'tabler:users',
+          'Get access to comprehensive guides, case studies, and best practices to enhance your marketing knowledge and skills.',
+        icon: 'tabler:book',
       },
     ]}
   />

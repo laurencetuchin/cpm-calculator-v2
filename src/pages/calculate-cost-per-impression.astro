@@ -1,0 +1,63 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import CalculateCostPerImpressionComponent from '~/components/common/CalculateCostPerImpression';
+
+const metadata = {
+  title: 'Calculate Cost Per Impression (CPI) - Free Online Calculator',
+  description: 'Calculate your Cost Per Impression (CPI) easily with our free online calculator. Learn how to measure and optimize your advertising costs per individual ad impression.',
+  canonical: 'https://cpmcalculator.online/calculate-cost-per-impression'
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    <h1 class="font-bold font-heading text-4xl md:text-5xl leading-tighter tracking-tighter mb-8 text-center">
+      Cost Per Impression (CPI) Calculator
+    </h1>
+
+    <div class="mb-8">
+      <CalculateCostPerImpressionComponent client:load />
+    </div>
+
+    <div class="prose prose-lg dark:prose-invert max-w-none">
+      <h2>What is Cost Per Impression (CPI)?</h2>
+      <p>
+        Cost Per Impression (CPI) is a digital advertising metric that measures how much you pay for each individual ad impression. Unlike CPM which measures cost per thousand impressions, CPI shows the exact cost for a single view of your ad.
+      </p>
+
+      <h2>How to Calculate Cost Per Impression</h2>
+      <p>The formula for calculating Cost Per Impression is:</p>
+      <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-6">
+        <code>CPI = Total Campaign Cost / Total Number of Impressions</code>
+      </div>
+
+      <h2>When to Use CPI</h2>
+      <ul>
+        <li>When you need granular cost analysis at the individual impression level</li>
+        <li>For comparing very different campaign sizes</li>
+        <li>When optimizing small-scale advertising efforts</li>
+        <li>For precise budget allocation across multiple channels</li>
+      </ul>
+
+      <h2>Tips for Optimizing Your CPI</h2>
+      <ol>
+        <li>Improve ad relevance to your target audience</li>
+        <li>Test different ad formats and placements</li>
+        <li>Optimize your ad scheduling</li>
+        <li>Refine your targeting parameters</li>
+        <li>Monitor and adjust campaigns based on performance data</li>
+      </ol>
+
+      <h2>Frequently Asked Questions</h2>
+      
+      <h3>What's the difference between CPI and CPM?</h3>
+      <p>While CPI measures the cost per individual impression, CPM (Cost Per Mille) measures the cost per thousand impressions. CPM is more commonly used in the industry, but CPI can provide more precise measurements for certain analyses.</p>
+
+      <h3>What is a good CPI rate?</h3>
+      <p>A good CPI varies significantly by industry, platform, and campaign type. Generally, you want to keep your CPI as low as possible while maintaining ad effectiveness. Typical CPIs range from fractions of a cent to several cents per impression.</p>
+
+      <h3>How can I reduce my CPI?</h3>
+      <p>To reduce your CPI, focus on improving ad quality, targeting accuracy, and campaign timing. Regular testing and optimization of your ad creative and audience targeting can help lower costs while maintaining or improving performance.</p>
+    </div>
+  </section>
+</Layout>

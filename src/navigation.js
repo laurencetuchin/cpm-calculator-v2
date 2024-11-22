@@ -11,16 +11,16 @@ export const headerData = {
       href: getPermalink('/cpm-calculator')
     },
     {
-      text: 'CPM to CPC Calculator', 
+      text: 'CPM to CPC', 
       href: getPermalink('/cpm-to-cpc-calculator')
     },
     {
-      text: 'Influencer CPM Calculator',
+      text: 'Influencer Calculator',
       href: getPermalink('/influencer-cpm-calculator')
     },
     {
-      text: 'Blog',
-      href: getPermalink('/blog')
+      text: 'Cost Per Impression',
+      href: getPermalink('/calculate-cost-per-impression')
     }
   ],
   actions: [{ text: 'Try now', href: 'https://cpmcalculator.online', target: '_blank' }]
