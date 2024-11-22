@@ -42,7 +42,7 @@ export const footerData = {
         { text: 'About', href: '/about' },
         { text: 'Top 10 Marketing Books', href: '/top-10-marketing-books' },
         { text: 'How to Sell Online', href: '#' },
-        { text: 'Best Personal Development Books', href: '#' },
+        { text: 'Best Personal Development Books', href: '/personal-development-books' },
       ],
     },
   ],
@@ -55,6 +55,6 @@ export const footerData = {
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/profile.php?id=61564261973878', target: '_blank', rel: 'noopener noreferrer' },
   ],
   footNote: `
-    Copyright CPM Calculator Online 2024.
+    Copyright CPM Calculator 2024.
   `,
 };

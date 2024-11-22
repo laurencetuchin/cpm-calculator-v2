@@ -21,7 +21,7 @@ For the purposes of these Terms and Conditions:
 
 - **Country** refers to: California, United States
 
-- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to CPM Calculator Online.
+- **Company** (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to CPM Calculator.
 
 - **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.
 
@@ -31,7 +31,7 @@ For the purposes of these Terms and Conditions:
 
 - **Third-party Social Media Service** means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.
 
-- **Website** refers to CPM Calculator Online, accessible from [https://cpmcalculator.online](https://cpmcalculator.online)
+- **Website** refers to CPM Calculator, accessible from [https://cpmcalculator.online](https://cpmcalculator.online)
 
 - **You** means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.
 
