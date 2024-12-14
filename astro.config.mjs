@@ -21,7 +21,8 @@ export default defineConfig({
     applyBaseStyles: false
   }), sitemap({
     changefreq: 'daily',
-    priority: 0.9
+    priority: 0.9,
+    lastmod: new Date().toISOString()
   }), mdx(), icon({
     include: {
       tabler: ['*'],
