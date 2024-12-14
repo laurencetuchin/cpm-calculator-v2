@@ -6,6 +6,7 @@ interface CalculatorInputs {
   clicks: string;
   conversions: string;
   engagements: string;
+  conversionValue: string;
 }
 
 const TiktokAdsCalculator: React.FC = () => {
@@ -14,7 +15,8 @@ const TiktokAdsCalculator: React.FC = () => {
     impressions: '',
     clicks: '',
     conversions: '',
-    engagements: ''
+    engagements: '',
+    conversionValue: ''
   });
 
   const [results, setResults] = useState({
@@ -40,13 +42,14 @@ const TiktokAdsCalculator: React.FC = () => {
     const clicks = parseFloat(inputs.clicks) || 0;
     const conversions = parseFloat(inputs.conversions) || 0;
     const engagements = parseFloat(inputs.engagements) || 0;
+    const conversionValue = parseFloat(inputs.conversionValue) || 0;
 
     const cpm = impressions ? (budget / impressions) * 1000 : 0;
     const cpc = clicks ? budget / clicks : 0;
     const ctr = impressions ? (clicks / impressions) * 100 : 0;
     const cpa = conversions ? budget / conversions : 0;
     const engagementRate = impressions ? (engagements / impressions) * 100 : 0;
-    const roas = budget ? (conversions * 50) / budget : 0; // Assuming $50 average order value
+    const roas = budget ? (conversions * conversionValue) / budget : 0;
 
     setResults({ cpm, cpc, ctr, cpa, engagementRate, roas });
   }, [inputs]);
@@ -115,6 +118,22 @@ const TiktokAdsCalculator: React.FC = () => {
               type="number"
               name="conversions"
               value={inputs.conversions}
+              onChange={handleInputChange}
+              className="w-full p-2 border rounded-md dark:bg-gray-700 dark:border-gray-600"
+              placeholder="e.g., 50"
+              onClick={(e) => (e.target as HTMLInputElement).placeholder = ''}
+              onBlur={(e) => (e.target as HTMLInputElement).placeholder = 'e.g., 50'}
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+              Conversion Value ($)
+            </label>
+            <input
+              type="number"
+              name="conversionValue"
+              value={inputs.conversionValue}
               onChange={handleInputChange}
               className="w-full p-2 border rounded-md dark:bg-gray-700 dark:border-gray-600"
               placeholder="e.g., 50"
