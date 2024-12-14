@@ -1,22 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface CalculatorInputs {
-  campaignType: string;
-  budget: number;
-  impressions: number;
-  clicks: number;
-  conversions: number;
-  engagements: number;
+  budget: string;
+  impressions: string;
+  clicks: string;
+  conversions: string;
+  engagements: string;
 }
 
 const TiktokAdsCalculator: React.FC = () => {
   const [inputs, setInputs] = useState<CalculatorInputs>({
-    campaignType: 'awareness',
-    budget: 0,
-    impressions: 0, 
-    clicks: 0,
-    conversions: 0,
-    engagements: 0
+    budget: '',
+    impressions: '',
+    clicks: '',
+    conversions: '',
+    engagements: ''
   });
 
   const [results, setResults] = useState({
@@ -28,32 +26,30 @@ const TiktokAdsCalculator: React.FC = () => {
     roas: 0
   });
 
-  const campaignTypes = [
-    { value: 'awareness', label: 'Brand Awareness' },
-    { value: 'traffic', label: 'Traffic' },
-    { value: 'conversions', label: 'Conversions' },
-    { value: 'engagement', label: 'Engagement' },
-    { value: 'video', label: 'Video Views' }
-  ];
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setInputs(prev => ({
       ...prev,
-      [name]: name === 'campaignType' ? value : parseFloat(value) || 0
+      [name]: value
     }));
   };
 
-  const calculateMetrics = () => {
-    const cpm = inputs.impressions ? (inputs.budget / inputs.impressions) * 1000 : 0;
-    const cpc = inputs.clicks ? inputs.budget / inputs.clicks : 0;
-    const ctr = inputs.impressions ? (inputs.clicks / inputs.impressions) * 100 : 0;
-    const cpa = inputs.conversions ? inputs.budget / inputs.conversions : 0;
-    const engagementRate = inputs.impressions ? (inputs.engagements / inputs.impressions) * 100 : 0;
-    const roas = inputs.budget ? (inputs.conversions * 50) / inputs.budget : 0; // Assuming $50 average order value
+  useEffect(() => {
+    const budget = parseFloat(inputs.budget) || 0;
+    const impressions = parseFloat(inputs.impressions) || 0;
+    const clicks = parseFloat(inputs.clicks) || 0;
+    const conversions = parseFloat(inputs.conversions) || 0;
+    const engagements = parseFloat(inputs.engagements) || 0;
+
+    const cpm = impressions ? (budget / impressions) * 1000 : 0;
+    const cpc = clicks ? budget / clicks : 0;
+    const ctr = impressions ? (clicks / impressions) * 100 : 0;
+    const cpa = conversions ? budget / conversions : 0;
+    const engagementRate = impressions ? (engagements / impressions) * 100 : 0;
+    const roas = budget ? (conversions * 50) / budget : 0; // Assuming $50 average order value
 
     setResults({ cpm, cpc, ctr, cpa, engagementRate, roas });
-  };
+  }, [inputs]);
 
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
@@ -62,24 +58,6 @@ const TiktokAdsCalculator: React.FC = () => {
       </h1>
       
       <div className="space-y-6">
-        <div>
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-            Campaign Type
-          </label>
-          <select
-            name="campaignType"
-            value={inputs.campaignType}
-            onChange={handleInputChange}
-            className="w-full p-2 border rounded-md dark:bg-gray-700 dark:border-gray-600"
-          >
-            {campaignTypes.map(type => (
-              <option key={type.value} value={type.value}>
-                {type.label}
-              </option>
-            ))}
-          </select>
-        </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -91,6 +69,9 @@ const TiktokAdsCalculator: React.FC = () => {
               value={inputs.budget}
               onChange={handleInputChange}
               className="w-full p-2 border rounded-md dark:bg-gray-700 dark:border-gray-600"
+              placeholder="e.g., 1000"
+              onClick={(e) => (e.target as HTMLInputElement).placeholder = ''}
+              onBlur={(e) => (e.target as HTMLInputElement).placeholder = 'e.g., 1000'}
             />
           </div>
 
@@ -104,6 +85,9 @@ const TiktokAdsCalculator: React.FC = () => {
               value={inputs.impressions}
               onChange={handleInputChange}
               className="w-full p-2 border rounded-md dark:bg-gray-700 dark:border-gray-600"
+              placeholder="e.g., 50000"
+              onClick={(e) => (e.target as HTMLInputElement).placeholder = ''}
+              onBlur={(e) => (e.target as HTMLInputElement).placeholder = 'e.g., 50000'}
             />
           </div>
 
@@ -117,6 +101,9 @@ const TiktokAdsCalculator: React.FC = () => {
               value={inputs.clicks}
               onChange={handleInputChange}
               className="w-full p-2 border rounded-md dark:bg-gray-700 dark:border-gray-600"
+              placeholder="e.g., 500"
+              onClick={(e) => (e.target as HTMLInputElement).placeholder = ''}
+              onBlur={(e) => (e.target as HTMLInputElement).placeholder = 'e.g., 500'}
             />
           </div>
 
@@ -130,6 +117,9 @@ const TiktokAdsCalculator: React.FC = () => {
               value={inputs.conversions}
               onChange={handleInputChange}
               className="w-full p-2 border rounded-md dark:bg-gray-700 dark:border-gray-600"
+              placeholder="e.g., 50"
+              onClick={(e) => (e.target as HTMLInputElement).placeholder = ''}
+              onBlur={(e) => (e.target as HTMLInputElement).placeholder = 'e.g., 50'}
             />
           </div>
 
@@ -143,16 +133,12 @@ const TiktokAdsCalculator: React.FC = () => {
               value={inputs.engagements}
               onChange={handleInputChange}
               className="w-full p-2 border rounded-md dark:bg-gray-700 dark:border-gray-600"
+              placeholder="e.g., 2500"
+              onClick={(e) => (e.target as HTMLInputElement).placeholder = ''}
+              onBlur={(e) => (e.target as HTMLInputElement).placeholder = 'e.g., 2500'}
             />
           </div>
         </div>
-
-        <button
-          onClick={calculateMetrics}
-          className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
-        >
-          Calculate Metrics
-        </button>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
           <div className="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg">
