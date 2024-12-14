@@ -1,0 +1,81 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import TiktokAdsCalculatorComponent from '~/components/common/TiktokAdsCalculator';
+
+const metadata = {
+  title: 'TikTok Ads Calculator - Calculate CPM, CPC, CTR & More for TikTok Advertising',
+  description: 'Free TikTok ads calculator to measure key metrics like CPM, CPC, CTR, CPA, engagement rate and ROAS. Optimize your TikTok advertising campaigns with data-driven insights.',
+  canonical: 'https://cpmcalculator.online/tiktok-ads-calculator',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+    <h1 class="font-bold font-heading text-4xl md:text-5xl leading-tighter tracking-tighter mb-4 text-center">
+      TikTok Ads Calculator
+    </h1>
+    
+    <div class="text-center mb-8 text-gray-700 dark:text-gray-300">
+      <p class="text-lg">
+        Calculate and analyze your TikTok advertising performance with our comprehensive calculator. Get instant insights into CPM, CPC, CTR, and other crucial metrics.
+      </p>
+    </div>
+
+    <TiktokAdsCalculatorComponent client:load />
+
+    <div class="mt-12 prose prose-lg max-w-4xl mx-auto dark:prose-invert">
+      <h2>Why Use a TikTok Ads Calculator?</h2>
+      <p>
+        TikTok has become one of the most powerful platforms for digital advertising. Our calculator helps you:
+      </p>
+      <ul>
+        <li>Measure campaign performance across key metrics</li>
+        <li>Optimize your ad spend for better results</li>
+        <li>Compare different campaign strategies</li>
+        <li>Make data-driven decisions for your TikTok marketing</li>
+      </ul>
+
+      <h2>Understanding TikTok Ad Metrics</h2>
+      <h3>CPM (Cost Per Mille)</h3>
+      <p>
+        CPM shows how much you're paying for every 1,000 impressions. A lower CPM generally indicates more efficient reach for your budget.
+      </p>
+
+      <h3>CPC (Cost Per Click)</h3>
+      <p>
+        CPC measures how much you're paying for each click on your ads. This is crucial for traffic-focused campaigns.
+      </p>
+
+      <h3>CTR (Click-Through Rate)</h3>
+      <p>
+        CTR shows the percentage of people who click your ad after seeing it. A higher CTR suggests more engaging ad content.
+      </p>
+
+      <h3>CPA (Cost Per Acquisition)</h3>
+      <p>
+        CPA indicates how much you're spending to acquire each customer. This is vital for conversion-focused campaigns.
+      </p>
+
+      <h2>Tips for Optimizing TikTok Ads</h2>
+      <ol>
+        <li>Test different ad formats and creative approaches</li>
+        <li>Target specific audience segments for better engagement</li>
+        <li>Monitor and adjust campaigns based on performance metrics</li>
+        <li>Focus on creating authentic, native content for the platform</li>
+        <li>Regularly analyze your metrics to identify improvement opportunities</li>
+      </ol>
+
+      <h2>Getting Started with TikTok Advertising</h2>
+      <p>
+        To make the most of your TikTok advertising:
+      </p>
+      <ul>
+        <li>Set clear campaign objectives</li>
+        <li>Define your target audience</li>
+        <li>Create engaging, platform-appropriate content</li>
+        <li>Start with a test budget to gather initial data</li>
+        <li>Use our calculator to track and optimize performance</li>
+      </ul>
+    </div>
+  </section>
+</Layout>
