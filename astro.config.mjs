@@ -20,14 +20,16 @@ export default defineConfig({
   integrations: [tailwind({
     applyBaseStyles: false
   }), sitemap({
-    changefreq: 'daily',
-    priority: 0.9,
-    lastmod: new Date().toISOString(),
-    filter: (page) => !page.includes('/_') && !page.includes('sitemap-'),// Exclude internal pages
+    filter: (page) => !page.includes('/_'),
+    lastmod: new Date(),
     serialize: (item) => ({
       ...item,
-      // Add any additional sitemap fields if needed
-    })
+      lastmod: item.lastmod.toISOString(),
+    }),
+    customPages: [
+      'https://cpmcalculator.online/sitemap.xml',
+      'https://cpmcalculator.online/sitemap-0.xml'
+    ]
   }), mdx(), icon({
     include: {
       tabler: ['*'],
