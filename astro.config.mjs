@@ -22,7 +22,12 @@ export default defineConfig({
   }), sitemap({
     changefreq: 'daily',
     priority: 0.9,
-    lastmod: new Date().toISOString()
+    lastmod: new Date().toISOString(),
+    filter: (page) => !page.includes('/_') && !page.includes('sitemap-'),// Exclude internal pages
+    serialize: (item) => ({
+      ...item,
+      // Add any additional sitemap fields if needed
+    })
   }), mdx(), icon({
     include: {
       tabler: ['*'],
