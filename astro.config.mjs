@@ -7,18 +7,26 @@ import mdx from '@astrojs/mdx';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
 
+import react from '@astrojs/react';
+import astrowind from './vendor/integration/index.mjs';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // https://astro.build/config
 export default defineConfig({
   output: 'static',
   integrations: [
+    react(),
+    astrowind(),
     tailwind({
       applyBaseStyles: false
     }),
     sitemap({
       filter: (page) => !page.includes('/_'),
-      lastmod: new Date()
+      lastmod: new Date(),
+      serialize(item) {
+        return item;
+      }
     }),
     mdx(),
     icon({
@@ -38,7 +46,8 @@ export default defineConfig({
   vite: {
     resolve: {
       alias: {
-        '~': path.resolve(__dirname, './src')
+        '~': path.resolve(__dirname, './src'),
+        'astrowind': path.resolve(__dirname, '.')
       }
     }
   }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const ImpressionsCalculator = () => {
   const [cost, setCost] = useState<number | null>(null);
@@ -31,66 +32,122 @@ const ImpressionsCalculator = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-md rounded-lg mb-4 relative">
-      <h2 className="text-2xl font-bold mb-4">Impressions Calculator</h2>
-      <div className="space-y-4">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.1 }}
+      className="glass max-w-md mx-auto p-6 text-gray-900 dark:text-white rounded-xl mb-4 relative overflow-hidden"
+    >
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-secondary to-primary"></div>
+      <h2 className="text-2xl font-bold mb-6 text-center bg-clip-text text-transparent bg-gradient-to-r from-secondary to-primary">Impressions Calculator</h2>
+      <div className="space-y-6">
         <div>
-          <label htmlFor="cost" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Campaign Cost ($)</label>
-          <input
+          <label htmlFor="cost" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Campaign Cost ($)</label>
+          <motion.input
+            whileFocus={{ scale: 1.02 }}
             type="number"
             id="cost"
             value={cost ?? ''}
             onChange={handleInputChange(setCost)}
-            className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+            className="block w-full border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm p-3 bg-white/50 dark:bg-gray-800/50 text-gray-900 dark:text-white focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all"
             placeholder="Enter cost"
           />
-          <div className="mt-2 space-x-2">
+          <div className="mt-3">
+            <input
+              type="range"
+              min="0"
+              max="20000"
+              step="100"
+              value={cost ?? 0}
+              onChange={(e) => setCost(parseFloat(e.target.value))}
+              className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer slider-thumb"
+              style={{
+                background: cost
+                  ? `linear-gradient(to right, var(--aw-color-secondary) 0%, var(--aw-color-secondary) ${(cost / 20000) * 100}%, rgb(229 231 235) ${(cost / 20000) * 100}%, rgb(229 231 235) 100%)`
+                  : undefined
+              }}
+            />
+          </div>
+          <div className="mt-3 flex flex-wrap gap-2">
             {[100, 500, 1000, 5000, 10000].map((value) => (
-              <button
+              <motion.button
+                whileHover={{ scale: 1.05, backgroundColor: 'var(--aw-color-secondary)', color: 'white' }}
+                whileTap={{ scale: 0.95 }}
                 key={value}
                 onClick={() => handlePresetClick('cost', value)}
-                className="text-xs px-2 py-1 rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
+                className="text-xs px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 transition-colors"
               >
                 ${value}
-              </button>
+              </motion.button>
             ))}
           </div>
         </div>
         <div>
-          <label htmlFor="cpm" className="block text-sm font-medium text-gray-700 dark:text-gray-300">CPM ($)</label>
-          <input
+          <label htmlFor="cpm" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">CPM ($)</label>
+          <motion.input
+            whileFocus={{ scale: 1.02 }}
             type="number"
             id="cpm"
             value={cpm ?? ''}
             onChange={handleInputChange(setCpm)}
-            className="mt-1 block w-full border border-gray-300 dark:border-gray-600 rounded-md shadow-sm p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+            className="block w-full border border-gray-300 dark:border-gray-600 rounded-lg shadow-sm p-3 bg-white/50 dark:bg-gray-800/50 text-gray-900 dark:text-white focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all"
             placeholder="Enter CPM"
           />
-          <div className="mt-2 space-x-2">
+          <div className="mt-3">
+            <input
+              type="range"
+              min="0"
+              max="50"
+              step="0.5"
+              value={cpm ?? 0}
+              onChange={(e) => setCpm(parseFloat(e.target.value))}
+              className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer slider-thumb"
+              style={{
+                background: cpm
+                  ? `linear-gradient(to right, var(--aw-color-secondary) 0%, var(--aw-color-secondary) ${(cpm / 50) * 100}%, rgb(229 231 235) ${(cpm / 50) * 100}%, rgb(229 231 235) 100%)`
+                  : undefined
+              }}
+            />
+          </div>
+          <div className="mt-3 flex flex-wrap gap-2">
             {[5, 10, 15, 20, 25].map((value) => (
-              <button
+              <motion.button
+                whileHover={{ scale: 1.05, backgroundColor: 'var(--aw-color-secondary)', color: 'white' }}
+                whileTap={{ scale: 0.95 }}
                 key={value}
                 onClick={() => handlePresetClick('cpm', value)}
-                className="text-xs px-2 py-1 rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
+                className="text-xs px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 transition-colors"
               >
                 ${value}
-              </button>
+              </motion.button>
             ))}
           </div>
         </div>
       </div>
-      <div className="mt-6">
-        {impressions !== null && (
-          <p className="text-lg font-semibold">Calculated Impressions: {Math.round(impressions).toLocaleString()}</p>
-        )}
+      <div className="mt-8 min-h-[3rem]">
+        <AnimatePresence>
+          {impressions !== null && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              className="p-4 rounded-lg bg-secondary/10 border border-secondary/20 text-center"
+            >
+              <p className="text-sm text-gray-600 dark:text-gray-400 uppercase tracking-wider font-semibold">Calculated Impressions</p>
+              <p className="text-3xl font-bold text-secondary">{Math.round(impressions).toLocaleString()}</p>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-      <button
+      <motion.button
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
         onClick={handleReset}
-        className="mt-4 px-3 py-1 text-sm rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300"
+        className="mt-6 w-full py-2.5 text-sm font-medium rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
       >
-        Reset
-      </button>
-    </div>
+        Reset Calculator
+      </motion.button>
+    </motion.div>
   );
 };
 

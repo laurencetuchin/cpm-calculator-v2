@@ -22,7 +22,12 @@ const {
 <section class="relative md:-mt-[76px] not-prose" {...id ? { id } : {}}>
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
     <slot name="bg">
-      {bg ? <Fragment set:html={bg} /> : null}
+      {bg ? <Fragment set:html={bg} /> : (
+        <div class="absolute inset-0 bg-page dark:bg-dark">
+          <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-soft-light"></div>
+          <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-primary/20 rounded-full blur-[100px] -z-10 pointer-events-none mix-blend-screen dark:mix-blend-exclusion"></div>
+        </div>
+      )}
     </slot>
   </div>
   <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
@@ -40,7 +45,7 @@ const {
         {
           title && (
             <h1
-              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200"
+              class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-4 font-heading dark:text-gray-200 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent pb-2"
               set:html={title}
             />
           )

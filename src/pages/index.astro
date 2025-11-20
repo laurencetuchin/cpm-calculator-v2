@@ -1,16 +1,11 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
-
-
-import CPMCalculator from '~/components/common/CPMCalculator';
+import HomeHero from '~/components/widgets/HomeHero.astro';
+import CalculatorShowcase from '~/components/common/CalculatorShowcase';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
-import ImpressionsCalculator from '~/components/common/ImpressionsCalculator';
-import CostPerImpressionCalculator from '~/components/common/CostPerImpressionCalculator';
-import CalculatorSelector from '~/components/common/CalculatorSelector';
 import HomeInfo from '~/components/common/HomeInfo';
 
 const metadata = {
@@ -23,13 +18,15 @@ const metadata = {
 <Layout metadata={metadata}>
   <!-- Hero Widget ******************* -->
 
-  <Hero
- 
+  <HomeHero
+    tagline="Maximize Your ROI"
   >
     <Fragment slot="title">
-      
-      CPM Calculator 
-      
+      <span class="text-accent dark:text-white highlight">CPM Calculator</span>
+      <br />
+      <span class="text-3xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+        The Ultimate Marketing Tool Suite
+      </span>
     </Fragment>
 
     <Fragment slot="subtitle">
@@ -39,19 +36,19 @@ const metadata = {
     
       Suitable for Agencies, Startups, Small Business, SaaS websites, Professionals and Influencers.
     </Fragment>
-  </Hero>
+  </HomeHero>
 
-  <!-- <CalculatorSelector client:visible /> -->
-  <CPMCalculator client:visible />
-  <ImpressionsCalculator client:visible  />
-  <CostPerImpressionCalculator client:visible   />
+  <div id="calculator" class="scroll-mt-20">
+    <CalculatorShowcase client:visible />
+  </div>
 
-
-  <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog posts by CPM Calculator are used as educational guides for marketers to improve campaign performance. 
-                `}
-  />
+  <div id="features">
+    <BlogLatestPosts
+      title="Find out more content in our Blog"
+      information={`The blog posts by CPM Calculator are used as educational guides for marketers to improve campaign performance. 
+                  `}
+    />
+  </div>
 
   <!-- FAQs Widget ******************* -->
 

@@ -3,6 +3,7 @@ import type { Stats as Props } from '~/types';
 import WidgetWrapper from '../ui/WidgetWrapper.astro';
 import Headline from '../ui/Headline.astro';
 import { Icon } from 'astro-icon/components';
+import AnimatedCount from './AnimatedCount';
 
 const {
   title = await Astro.slots.render('title'),
@@ -31,7 +32,7 @@ const {
             )}
             {amount && (
               <div class="font-heading text-primary text-[2.6rem] font-bold dark:text-white lg:text-5xl xl:text-6xl">
-                {amount}
+                <AnimatedCount client:visible value={amount} />
               </div>
             )}
             {title && (
