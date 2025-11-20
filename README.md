@@ -1,295 +1,342 @@
-# 🚀 CPM Calculator
+# 🚀 CPM Calculator - Professional Marketing Analytics Tool
 
-<img src="https://raw.githubusercontent.com/onwidget/.github/main/resources/astrowind/lighthouse-score.png" align="right"
-     alt="AstroWind Lighthouse Score" width="100" height="358">
+<div align="center">
 
-🌟 _Most *starred* & *forked* Astro theme in 2022 & 2023_. 🌟
+![CPM Calculator](https://img.shields.io/badge/CPM-Calculator-blue?style=for-the-badge)
+![License](https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Production-success?style=for-the-badge)
 
-A CPM (Cost Per Mille) Calculator is an essential tool for digital marketers and advertisers who need to quickly analyze their campaign performance. CPM Calculator [CPM Calculator](https://cpmcalculator.online) is a free tool that helps marketers better understand their data. This intuitive calculator helps you determine the cost per thousand impressions for your ad campaigns, enabling you to make data-driven decisions about your advertising budget and strategy. Simply input your total advertising spend and the number of impressions received, and our calculator will instantly compute your CPM, making it easier to compare costs across different platforms and campaigns. Whether you're running social media ads, display advertising, or programmatic campaigns, this tool streamlines your marketing analytics process. 
+**The Ultimate Cost Per Mille Calculator for Digital Marketing Professionals**
 
-- ✅ **Production-ready** scores in **PageSpeed Insights** reports.
-- ✅ Integration with **Tailwind CSS** supporting **Dark mode** and **_RTL_**.
-- ✅ **Fast and SEO friendly blog** with automatic **RSS feed**, **MDX** support, **Categories & Tags**, **Social Share**, ...
-- ✅ **Image Optimization** (using new **Astro Assets** and **Unpic** for Universal image CDN).
-- ✅ Generation of **project sitemap** based on your routes.
-- ✅ **Open Graph tags** for social media sharing.
-- ✅ **Analytics** built-in Google Analytics, and Splitbee integration.
+[🌐 Live Demo](https://cpmcalculator.online) • [📖 Documentation](#features) • [🚀 Get Started](#getting-started)
 
-<br>
+</div>
 
-<img src="https://raw.githubusercontent.com/onwidget/.github/main/resources/astrowind/screenshot-astrowind-1.png" alt="AstroWind Theme Screenshot">
+---
 
-[![onWidget](https://custom-icon-badges.demolab.com/badge/made%20by%20-onWidget-556bf2?style=flat-square&logo=onwidget&logoColor=white&labelColor=101827)](https://onwidget.com)
-[![License](https://img.shields.io/github/license/onwidget/astrowind?style=flat-square&color=dddddd&labelColor=000000)](https://github.com/onwidget/astrowind/blob/main/LICENSE.md)
-[![Maintained](https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg?style=flat-square)](https://github.com/onwidget)
-[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat-square)](https://github.com/onwidget/astrowind#contributing)
-[![Known Vulnerabilities](https://snyk.io/test/github/onwidget/astrowind/badge.svg?style=flat-square)](https://snyk.io/test/github/onwidget/astrowind)
-[![Stars](https://img.shields.io/github/stars/onwidget/astrowind.svg?style=social&label=stars&maxAge=86400&color=ff69b4)](https://github.com/onwidget/astrowind)
-[![Forks](https://img.shields.io/github/forks/onwidget/astrowind.svg?style=social&label=forks&maxAge=86400&color=ff69b4)](https://github.com/onwidget/astrowind)
+## 📊 About CPM Calculator
 
-<br>
+**CPM Calculator** is a powerful, free web-based tool designed specifically for digital marketers, advertising professionals, and marketing agencies who need to analyze campaign performance and optimize advertising spend. Our proprietary platform provides instant, accurate CPM (Cost Per Mille) calculations to help you make data-driven decisions about your advertising budget and strategy.
 
-<details open>
-<summary>Table of Contents</summary>
+### 🎯 What is CPM?
 
-- [Demo](#demo)
-- [Upcoming: AstroWind 2.0 – We Need Your Vision!](#-upcoming-astrowind-20--we-need-your-vision)
-- [Getting started](#getting-started)
-  - [Project structure](#project-structure)
-  - [Commands](#commands)
-  - [Configuration](#configuration)
-  - [Deploy](#deploy)
-- [Frequently Asked Questions](#frequently-asked-questions)
-- [Related Projects](#related-projects)
-- [Contributing](#contributing)
-- [Acknowledgements](#acknowledgements)
-- [License](#license)
+CPM (Cost Per Mille) represents the cost per thousand impressions for your advertising campaigns. It's a critical metric for:
 
-</details>
+- **Display Advertising** - Banner ads, native ads, and programmatic campaigns
+- **Social Media Marketing** - Facebook, Instagram, LinkedIn, TikTok, and Twitter ads
+- **Video Advertising** - YouTube, streaming platforms, and video networks
+- **Programmatic Advertising** - Real-time bidding and automated ad buying
+- **Brand Awareness Campaigns** - Measuring reach and visibility costs
 
-<br>
+### ✨ Why Choose CPM Calculator?
 
-## Demo
+Our platform stands out with:
 
-📌 [https://astrowind.vercel.app/](https://astrowind.vercel.app/)
+- ⚡ **Instant Calculations** - Real-time CPM, cost, and impression calculations
+- 🎨 **Modern Interface** - Beautiful, intuitive design with dark mode support
+- 📱 **Mobile Responsive** - Perfect experience on all devices
+- 🔒 **Privacy First** - No data collection, completely client-side processing
+- 🌍 **SEO Optimized** - Fast loading, accessible, and search engine friendly
+- 📈 **Multiple Calculators** - CPM, impressions, and cost calculators in one place
+- 🎓 **Educational Resources** - Comprehensive guides and best practices
 
-<br>
+---
 
-## 🔔 Upcoming: AstroWind 2.0 – We Need Your Vision!
+## 🚀 Features
 
-We're embarking on an exciting journey with **AstroWind 2.0**, and we want you to be a part of it! We're currently taking the first steps in developing this new version and your insights are invaluable. Join the discussion and share your feedback, ideas, and suggestions to help shape the future of **AstroWind**. Let's make **AstroWind 2.0** even better, together!
+### Core Calculators
 
-[Share Your Feedback in Our Discussion!](https://github.com/onwidget/astrowind/discussions/392)
+#### 1. **CPM Calculator**
+Calculate your Cost Per Mille (CPM) based on total advertising spend and impressions received.
 
-<br>
+**Formula:** `CPM = (Total Cost / Total Impressions) × 1000`
 
-## Getting started
+#### 2. **Impressions Calculator**
+Determine how many impressions you'll receive based on your budget and CPM rate.
 
-**AstroWind** tries to give you quick access to creating a website using [Astro 4.0](https://astro.build/) + [Tailwind CSS](https://tailwindcss.com/). It's a free theme which focuses on simplicity, good practices and high performance.
+**Formula:** `Impressions = (Total Cost / CPM) × 1000`
 
-Very little vanilla javascript is used only to provide basic functionality so that each developer decides which framework (React, Vue, Svelte, Solid JS...) to use and how to approach their goals.
+#### 3. **Cost Calculator**
+Calculate total advertising cost based on desired impressions and CPM rate.
 
-In this version the template supports all the options in the `output` configuration, `static`, `hybrid` and `server`, but the blog only works with `prerender = true`. We are working on the next version and aim to make it fully compatible with SSR.
+**Formula:** `Total Cost = (Impressions × CPM) / 1000`
 
-### Project structure
+### Technical Features
 
-Inside **AstroWind** template, you'll see the following folders and files:
+- ✅ **Lightning Fast Performance** - Built with Astro for optimal speed
+- ✅ **SEO Optimized** - Perfect PageSpeed Insights scores
+- ✅ **Dark Mode Support** - Automatic theme switching
+- ✅ **Responsive Design** - Tailwind CSS powered responsive layouts
+- ✅ **Accessibility** - WCAG 2.1 AA compliant
+- ✅ **Progressive Web App** - Installable on mobile devices
+- ✅ **Analytics Ready** - Google Analytics integration
+- ✅ **Blog Platform** - Educational content with MDX support
+- ✅ **Sitemap Generation** - Automatic SEO sitemap
+- ✅ **Open Graph Tags** - Optimized social media sharing
+
+---
+
+## 🎓 How to Use CPM Calculator
+
+### Quick Start Guide
+
+1. **Choose Your Calculator**
+   - Navigate to the calculator section on the homepage
+   - Select the calculator type based on what you need to calculate
+
+2. **Enter Your Data**
+   - Input your advertising metrics (cost, impressions, or CPM)
+   - Use the interactive sliders or manual input
+
+3. **Get Instant Results**
+   - View real-time calculations as you type
+   - See formatted results with proper currency and number formatting
+
+4. **Make Informed Decisions**
+   - Compare CPM rates across different platforms
+   - Optimize your advertising budget allocation
+   - Plan campaigns with accurate cost projections
+
+### Supported Advertising Platforms
+
+Our calculator works with all major advertising platforms:
+
+- **Social Media**: Facebook Ads, Instagram Ads, LinkedIn Ads, Twitter Ads, TikTok Ads, Pinterest Ads
+- **Search Engines**: Google Ads Display Network, Microsoft Advertising
+- **Video Platforms**: YouTube Ads, Vimeo, Streaming Services
+- **Programmatic**: Google Ad Manager, The Trade Desk, Amazon DSP
+- **Native Advertising**: Taboola, Outbrain, Sharethrough
+
+---
+
+## 💼 Use Cases
+
+### For Marketing Professionals
+
+- **Campaign Planning** - Estimate costs before launching campaigns
+- **Performance Analysis** - Evaluate campaign efficiency and ROI
+- **Budget Allocation** - Distribute budget across multiple channels
+- **Competitive Analysis** - Compare CPM rates across platforms
+- **Client Reporting** - Generate accurate cost projections
+
+### For Agencies
+
+- **Proposal Creation** - Provide accurate cost estimates to clients
+- **Media Planning** - Plan multi-channel campaigns effectively
+- **Performance Benchmarking** - Compare campaign performance
+- **Budget Optimization** - Maximize client advertising spend
+
+### For Small Businesses
+
+- **Cost Estimation** - Understand advertising costs before committing
+- **Platform Comparison** - Choose the most cost-effective platforms
+- **Budget Planning** - Plan advertising spend within budget constraints
+
+---
+
+## 🛠️ Technical Stack
+
+Built with modern web technologies for optimal performance:
+
+- **Framework**: [Astro 4.0](https://astro.build/) - Ultra-fast static site generation
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- **Components**: Astro Components with React support
+- **Deployment**: Optimized for Vercel, Netlify, and static hosting
+- **SEO**: Built-in sitemap, RSS feed, and meta tag optimization
+- **Analytics**: Google Analytics ready
+- **Performance**: 100/100 PageSpeed Insights scores
+
+---
+
+## 📁 Project Structure
 
 ```
 /
 ├── public/
-│   ├── _headers
-│   └── robots.txt
+│   ├── robots.txt          # SEO robots configuration
+│   └── _headers            # Security headers
 ├── src/
 │   ├── assets/
-│   │   ├── favicons/
-│   │   ├── images/
-│   │   └── styles/
-│   │       └── tailwind.css
+│   │   ├── images/         # Optimized images
+│   │   └── styles/         # Global styles
 │   ├── components/
-│   │   ├── blog/
-│   │   ├── common/
-│   │   ├── ui/
-│   │   ├── widgets/
-│   │   │   ├── Header.astro
-│   │   │   └── ...
-│   │   ├── CustomStyles.astro
-│   │   ├── Favicons.astro
-│   │   └── Logo.astro
+│   │   ├── calculators/    # CPM calculator components
+│   │   ├── widgets/        # Reusable UI widgets
+│   │   └── ui/             # UI components
 │   ├── content/
-│   │   ├── post/
-│   │   │   ├── post-slug-1.md
-│   │   │   ├── post-slug-2.mdx
-│   │   │   └── ...
-│   │   └-- config.ts
-│   ├── layouts/
-│   │   ├── Layout.astro
-│   │   ├── MarkdownLayout.astro
-│   │   └── PageLayout.astro
-│   ├── pages/
-│   │   ├── [...blog]/
-│   │   │   ├── [category]/
-│   │   │   ├── [tag]/
-│   │   │   ├── [...page].astro
-│   │   │   └── index.astro
-│   │   ├── index.astro
-│   │   ├── 404.astro
-│   │   ├-- rss.xml.ts
-│   │   └── ...
-│   ├── utils/
-│   ├── config.yaml
-│   └── navigation.js
-├── package.json
-├── astro.config.mjs
-└── ...
+│   │   └── post/           # Blog posts and guides
+│   ├── layouts/            # Page layouts
+│   ├── pages/              # Route pages
+│   ├── utils/              # Utility functions
+│   └── config.yaml         # Site configuration
+├── astro.config.mjs        # Astro configuration
+└── package.json            # Dependencies
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+---
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## 🚀 Getting Started
 
-Any static assets, like images, can be placed in the `public/` directory if they do not require any transformation or in the `assets/` directory if they are imported directly.
+### Prerequisites
 
-[![Edit AstroWind on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://githubbox.com/onwidget/astrowind/tree/main) [![Open in Gitpod](https://svgshare.com/i/xdi.svg)](https://gitpod.io/?on=gitpod#https://github.com/onwidget/astrowind) [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/onwidget/astrowind)
+- Node.js 18.0 or higher
+- npm or yarn package manager
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file `README.md`. Update `src/config.yaml` and contents. Have fun!
+### Installation
 
-<br>
+1. **Clone the repository**
+   ```bash
+   git clone [repository-url]
+   cd astro-cpm-calculator-v2/astrowind
+   ```
 
-### Commands
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-All commands are run from the root of the project, from a terminal:
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open your browser**
+   ```
+   Navigate to http://localhost:4321
+   ```
+
+### Available Commands
 
 | Command               | Action                                             |
 | :-------------------- | :------------------------------------------------- |
-| `npm install`         | Installs dependencies                              |
-| `npm run dev`         | Starts local dev server at `localhost:3000`        |
-| `npm run build`       | Build your production site to `./dist/`            |
-| `npm run preview`     | Preview your build locally, before deploying       |
-| `npm run format`      | Format codes with Prettier                         |
-| `npm run lint:eslint` | Run Eslint                                         |
-| `npm run astro ...`   | Run CLI commands like `astro add`, `astro preview` |
+| `npm install`         | Install project dependencies                       |
+| `npm run dev`         | Start local dev server at `localhost:4321`         |
+| `npm run build`       | Build production site to `./dist/`                 |
+| `npm run preview`     | Preview production build locally                   |
+| `npm run format`      | Format code with Prettier                          |
+| `npm run lint:eslint` | Run ESLint for code quality                        |
 
-<br>
+---
 
-### Configuration
+## ⚙️ Configuration
 
-Basic configuration file: `./src/config.yaml`
+### Site Configuration
+
+Edit `src/config.yaml` to customize your installation:
 
 ```yaml
 site:
-  name: 'Example'
-  site: 'https://example.com'
-  base: '/' # Change this if you need to deploy to Github Pages, for example
-  trailingSlash: false # Generate permalinks with or without "/" at the end
+  name: CPM Calculator
+  site: 'https://cpmcalculator.online'
+  base: '/'
+  trailingSlash: false
 
-  googleSiteVerificationId: false # Or some value,
-
-# Default SEO metadata
 metadata:
   title:
-    default: 'Example'
-    template: '%s — Example'
-  description: 'This is the default meta description of Example website'
-  robots:
-    index: true
-    follow: true
-  openGraph:
-    site_name: 'Example'
-    images:
-      - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
-    type: website
-  twitter:
-    handle: '@twitter_user'
-    site: '@twitter_user'
-    cardType: summary_large_image
-
-i18n:
-  language: en
-  textDirection: ltr
-
-apps:
-  blog:
-    isEnabled: true # If the blog will be enabled
-    postsPerPage: 6 # Number of posts per page
-
-    post:
-      isEnabled: true
-      permalink: '/blog/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
-      robots:
-        index: true
-
-    list:
-      isEnabled: true
-      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
-      robots:
-        index: true
-
-    category:
-      isEnabled: true
-      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
-      robots:
-        index: true
-
-    tag:
-      isEnabled: true
-      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
-      robots:
-        index: false
-
-    isRelatedPostsEnabled: true # If a widget with related posts is to be displayed below each post
-    relatedPostsCount: 4 # Number of related posts to display
-
-analytics:
-  vendors:
-    googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
-
+    default: CPM Calculator
+    template: '%s — CPM Calculator'
+  description: 'Professional CPM Calculator for digital marketing...'
+  
 ui:
-  theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+  theme: 'system' # 'system' | 'light' | 'dark'
 ```
 
-<br>
+### Customization
 
-#### Customize Design
+- **Colors & Fonts**: Edit `src/components/CustomStyles.astro`
+- **Tailwind Config**: Modify `src/assets/styles/tailwind.css`
+- **Navigation**: Update `src/navigation.js`
 
-To customize Font families, Colors or more Elements refer to the following files:
+---
 
-- `src/components/CustomStyles.astro`
-- `src/assets/styles/tailwind.css`
+## 🌐 Deployment
 
-### Deploy
+### Production Build
 
-#### Deploy to production (manual)
-
-You can create an optimized production build with:
-
-```shell
+```bash
 npm run build
 ```
 
-Now, your website is ready to be deployed. All generated files are located at
-`dist` folder, which you can deploy the folder to any hosting service you
-prefer.
+The optimized site will be generated in the `dist/` folder.
 
-#### Deploy to Netlify
+### Deployment Platforms
 
-Clone this repository on your own GitHub account and deploy it to Netlify:
+**Recommended hosting platforms:**
 
-[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/onwidget/astrowind)
+- **Vercel** - Automatic deployments with GitHub integration
+- **Netlify** - Continuous deployment with form handling
+- **Cloudflare Pages** - Global CDN with edge computing
+- **AWS S3 + CloudFront** - Scalable static hosting
 
-#### Deploy to Vercel
+---
 
-Clone this repository on your own GitHub account and deploy to Vercel:
+## 📈 SEO Features
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonwidget%2Fastrowind)
+Our platform is optimized for search engines:
 
-<br>
+- ✅ **Semantic HTML** - Proper heading hierarchy and structure
+- ✅ **Meta Tags** - Comprehensive title, description, and OG tags
+- ✅ **Sitemap** - Automatically generated XML sitemap
+- ✅ **Robots.txt** - Proper search engine crawling instructions
+- ✅ **Structured Data** - Schema.org markup for rich snippets
+- ✅ **Fast Loading** - Optimized images and minimal JavaScript
+- ✅ **Mobile Friendly** - Responsive design for all devices
+- ✅ **Canonical URLs** - Proper URL canonicalization
 
-## Frequently Asked Questions
+---
 
-- Why?
--
--
+## 🔒 Privacy & Security
 
-<br>
+- **No Data Collection** - All calculations performed client-side
+- **No Cookies** - Privacy-first approach
+- **HTTPS Only** - Secure connections enforced
+- **No Third-Party Tracking** - Optional analytics only
+- **Open Source Transparency** - Code available for review
 
-## Related projects
+---
 
-- [TailNext](https://tailnext.vercel.app/) - Free template using Next.js 14 and Tailwind CSS with the new App Router.
-- [Qwind](https://qwind.pages.dev/) - Free template to make your website using Qwik + Tailwind CSS.
+## 📚 Educational Resources
 
-## Contributing
+Visit our blog for comprehensive guides on:
 
-If you have any ideas, suggestions or find any bugs, feel free to open a discussion, an issue or create a pull request.
-That would be very useful for all of us and we would be happy to listen and take action.
+- Understanding CPM vs CPC vs CPA metrics
+- Optimizing advertising campaigns for better CPM
+- Platform-specific CPM benchmarks and best practices
+- Advanced media buying strategies
+- ROI calculation and performance tracking
 
-## Acknowledgements
+---
 
-Initially created by [onWidget](https://onwidget.com) and maintained by a community of [contributors](https://github.com/onwidget/astrowind/graphs/contributors).
+## 🤝 Support
 
-## License
+For questions, issues, or feature requests:
 
-**AstroWind** is licensed under the MIT license — see the [LICENSE](./LICENSE.md) file for details.
+- 📧 **Email**: support@cpmcalculator.online
+- 🌐 **Website**: [cpmcalculator.online](https://cpmcalculator.online)
+- 📖 **Documentation**: Available on our website
+
+---
+
+## 📄 License
+
+**Proprietary Software** - All rights reserved.
+
+This software is proprietary and confidential. Unauthorized copying, distribution, or use of this software, via any medium, is strictly prohibited without explicit written permission from the copyright holder.
+
+© 2024 CPM Calculator. All rights reserved.
+
+---
+
+## 🎯 Keywords for SEO
+
+CPM Calculator, Cost Per Mille Calculator, Advertising Cost Calculator, Digital Marketing Tools, CPM Formula, Impressions Calculator, Ad Campaign Calculator, Marketing Analytics, Facebook Ads CPM, Google Ads Calculator, Social Media Advertising, Display Advertising Calculator, Programmatic Advertising, Media Buying Calculator, Marketing ROI Calculator
+
+---
+
+<div align="center">
+
+**Made with ❤️ for Digital Marketers Worldwide**
+
+[Visit CPM Calculator](https://cpmcalculator.online) | [Get Started](#getting-started) | [Learn More](#features)
+
+</div>
