@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import InfluencerCPMCalculator from '~/components/common/InfluencerCPMCalculator';
+import RelatedTools from '~/components/common/RelatedTools.astro';
 
 const metadata = {
   title: 'Influencer CPM Calculator - Calculate Cost Per Mille for Influencer Marketing',
@@ -55,6 +56,11 @@ const metadata = {
         <li>Platform-specific performance metrics</li>
         <li>Seasonal trends and timing</li>
       </ul>
+    </div>
+    
+    <!-- Related Tools Section -->
+    <div class="mt-12">
+      <RelatedTools currentPage="/influencer-cpm-calculator" />
     </div>
   </section>
 </Layout>

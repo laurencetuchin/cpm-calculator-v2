@@ -1,0 +1,98 @@
+---
+import { Icon } from 'astro-icon/components';
+
+interface Tool {
+  title: string;
+  description: string;
+  href: string;
+  icon: string;
+  gradient: string;
+}
+
+interface Props {
+  currentPage?: string;
+}
+
+const { currentPage } = Astro.props;
+
+const allTools: Tool[] = [
+  {
+    title: 'CPM Calculator',
+    description: 'Calculate Cost Per Thousand Impressions for your advertising campaigns',
+    href: '/cpm-calculator',
+    icon: 'tabler:calculator',
+    gradient: 'from-purple-400 to-pink-600'
+  },
+  {
+    title: 'CPM to CPC Calculator',
+    description: 'Convert CPM to CPC and compare pricing models',
+    href: '/cpm-to-cpc-calculator',
+    icon: 'tabler:arrows-exchange',
+    gradient: 'from-blue-400 to-purple-600'
+  },
+  {
+    title: 'Cost Per Impression Calculator',
+    description: 'Calculate the cost for individual ad impressions',
+    href: '/calculate-cost-per-impression',
+    icon: 'tabler:eye',
+    gradient: 'from-green-400 to-blue-600'
+  },
+  {
+    title: 'Influencer CPM Calculator',
+    description: 'Calculate CPM and engagement metrics for influencer marketing',
+    href: '/influencer-cpm-calculator',
+    icon: 'tabler:users',
+    gradient: 'from-pink-400 to-purple-600'
+  },
+  {
+    title: 'TikTok Ads Calculator',
+    description: 'Calculate CPM, CPC, CTR and more for TikTok advertising',
+    href: '/tiktok-ads-calculator',
+    icon: 'tabler:brand-tiktok',
+    gradient: 'from-cyan-400 to-pink-600'
+  }
+];
+
+// Filter out the current page
+const relatedTools = allTools.filter(tool => tool.href !== currentPage);
+---
+
+<section class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)]">
+  <div class="flex items-center mb-6">
+    <Icon name="tabler:tools" class="w-8 h-8 text-purple-400 mr-3" />
+    <h2 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+      Related Marketing Tools
+    </h2>
+  </div>
+  
+  <p class="text-gray-400 mb-8">
+    Explore our suite of free marketing calculators to optimize your advertising campaigns
+  </p>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    {relatedTools.map((tool) => (
+      <a 
+        href={tool.href}
+        class="group relative p-6 rounded-2xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 hover:border-white/30 transition-all duration-300 hover:shadow-[0_0_30px_rgba(139,92,246,0.2)] hover:scale-[1.02]"
+      >
+        <div class="flex items-start mb-3">
+          <div class={`flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-r ${tool.gradient} flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300`}>
+            <Icon name={tool.icon} class="w-6 h-6 text-white" />
+          </div>
+          <div class="flex-1">
+            <h3 class={`text-lg font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r ${tool.gradient} group-hover:opacity-80 transition-opacity`}>
+              {tool.title}
+            </h3>
+          </div>
+        </div>
+        <p class="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
+          {tool.description}
+        </p>
+        
+        <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          <Icon name="tabler:arrow-right" class="w-5 h-5 text-purple-400" />
+        </div>
+      </a>
+    ))}
+  </div>
+</section>

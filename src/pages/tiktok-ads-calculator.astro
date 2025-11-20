@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import TiktokAdsCalculatorComponent from '~/components/common/TiktokAdsCalculator';
+import RelatedTools from '~/components/common/RelatedTools.astro';
 
 const metadata = {
   title: 'TikTok Ads Calculator - Calculate CPM, CPC, CTR & More for TikTok Advertising',
@@ -124,6 +125,11 @@ const metadata = {
         <li>Lead Generation: Collect user information</li>
         <li>Conversions: Drive sales or specific actions</li>
       </ul>
+    </div>
+    
+    <!-- Related Tools Section -->
+    <div class="mt-12">
+      <RelatedTools currentPage="/tiktok-ads-calculator" />
     </div>
   </section>
 </Layout>

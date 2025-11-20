@@ -1,6 +1,7 @@
 --- 
 import Layout from '~/layouts/PageLayout.astro';
 import CPMToCPCCalculator from '~/components/common/CPMToCPCCalculator';
+import RelatedTools from '~/components/common/RelatedTools.astro';
 
 const metadata = {
   title: 'CPM to CPC Calculator',
@@ -15,6 +16,11 @@ const metadata = {
           CPM to CPC Calculator
         </h1>
         <CPMToCPCCalculator client:load  />
+        
+        <!-- Related Tools Section -->
+        <div class="mt-12">
+          <RelatedTools currentPage="/cpm-to-cpc-calculator" />
+        </div>
       </section>
     </Layout>
 

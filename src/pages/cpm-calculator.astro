@@ -1,6 +1,8 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import CPMCalculator from '~/components/common/CPMCalculator';
+import RelatedTools from '~/components/common/RelatedTools.astro';
+import { Icon } from 'astro-icon/components';
 
 const metadata = {
   title: 'CPM Calculator | Calculate Cost Per Thousand Impressions',
@@ -14,65 +16,240 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
-    <h1 class="text-4xl font-bold leading-tighter tracking-tighter mb-8 font-heading">
-      CPM Calculator: Calculate Your Cost Per Thousand Impressions
-    </h1>
-
-    <div class="mb-10">
-      <p class="text-lg mb-6">
-        Calculate your Cost Per Mille (CPM) quickly and accurately with our free online calculator. Simply enter your campaign cost and impressions to get your CPM instantly.
-      </p>
-      
-      <CPMCalculator client:load />
+  <!-- Hero Section with Animated Backgrounds -->
+  <section class="relative not-prose overflow-hidden min-h-[60vh] flex items-center">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute left-1/2 top-0 -translate-x-1/2 w-[1000px] h-[500px] bg-purple-600/30 blur-[120px] rounded-full mix-blend-screen animate-blob"></div>
+      <div class="absolute right-0 top-1/4 w-[800px] h-[600px] bg-blue-600/20 blur-[100px] rounded-full mix-blend-screen animate-blob animation-delay-2000"></div>
+      <div class="absolute left-0 bottom-0 w-[600px] h-[600px] bg-pink-600/20 blur-[100px] rounded-full mix-blend-screen animate-blob animation-delay-4000"></div>
     </div>
 
-    <div class="prose prose-lg dark:prose-invert max-w-none">
-      <h2>What is CPM?</h2>
-      <p>
-        CPM (Cost Per Mille) is a key advertising metric that measures the cost per 1,000 impressions. It helps advertisers understand how much they're paying to reach their audience and compare costs across different ad platforms and campaigns.
-      </p>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+      <div class="py-12 md:py-20 text-center">
+        <div class="flex justify-center mb-6">
+          <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 animate-fade-in-up">
+            Professional Marketing Tool
+          </p>
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-6 font-heading dark:text-gray-200 animate-fade-in-up animation-delay-150">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">CPM Calculator</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-muted mb-8 dark:text-slate-300 max-w-3xl mx-auto animate-fade-in-up animation-delay-300">
+          Calculate Your Cost Per Thousand Impressions
+        </p>
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto animate-fade-in-up animation-delay-450">
+          Free online CPM calculator to easily calculate Cost Per Mille for your advertising campaigns. Get instant results with CPM benchmarks and optimization tips.
+        </p>
+      </div>
+    </div>
+  </section>
 
-      <h2>How to Calculate CPM</h2>
-      <p>The formula for calculating CPM is:</p>
-      <div class="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg mb-6">
-        <code>CPM = (Total Campaign Cost / Total Impressions) × 1,000</code>
+  <!-- Calculator Section -->
+  <section class="relative px-4 sm:px-6 mx-auto lg:px-8 max-w-6xl -mt-8 mb-16">
+    <div class="animate-fade-in-up animation-delay-600">
+      <CPMCalculator client:load />
+    </div>
+  </section>
+
+  <!-- Information Sections -->
+  <section class="px-4 sm:px-6 mx-auto lg:px-8 max-w-6xl pb-16">
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <!-- What is CPM Card -->
+      <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] animate-fade-in-up animation-delay-750">
+        <div class="flex items-center mb-4">
+          <Icon name="tabler:info-circle" class="w-8 h-8 text-purple-400 mr-3" />
+          <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">What is CPM?</h2>
+        </div>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          CPM (Cost Per Mille) is a key advertising metric that measures the cost per 1,000 impressions. It helps advertisers understand how much they're paying to reach their audience and compare costs across different ad platforms and campaigns.
+        </p>
       </div>
 
-      <h2>Common CPM Terms</h2>
-      <ul>
-        <li><strong>Impressions:</strong> The number of times your ad is displayed</li>
-        <li><strong>eCPM:</strong> Effective Cost Per Mille - actual earnings per 1,000 impressions</li>
-        <li><strong>vCPM:</strong> Viewable Cost Per Mille - cost per 1,000 viewable impressions</li>
-      </ul>
+      <!-- How to Calculate Card -->
+      <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] animate-fade-in-up animation-delay-900">
+        <div class="flex items-center mb-4">
+          <Icon name="tabler:calculator" class="w-8 h-8 text-blue-400 mr-3" />
+          <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">How to Calculate CPM</h2>
+        </div>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">The formula for calculating CPM is:</p>
+        <div class="bg-gradient-to-r from-purple-500/10 to-blue-500/10 p-4 rounded-xl border border-purple-500/20">
+          <code class="text-purple-300 font-mono">CPM = (Total Campaign Cost / Total Impressions) × 1,000</code>
+        </div>
+      </div>
+    </div>
 
-      <h2>Average CPM Rates by Platform (2024)</h2>
-      <ul>
-        <li>Facebook Ads: $7.19 - $14.50</li>
-        <li>Instagram Ads: $6.70 - $12.40</li>
-        <li>Google Display Network: $2.80 - $5.00</li>
-        <li>YouTube Ads: $6.00 - $12.00</li>
-        <li>LinkedIn Ads: $6.50 - $15.00</li>
-      </ul>
+    <!-- CPM Terms -->
+    <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] mb-12 animate-fade-in-up animation-delay-1050">
+      <h2 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 mb-6">Common CPM Terms</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-gradient-to-br from-purple-500/10 to-transparent p-6 rounded-2xl border border-purple-500/20">
+          <h3 class="text-xl font-bold text-purple-300 mb-2">Impressions</h3>
+          <p class="text-gray-400">The number of times your ad is displayed</p>
+        </div>
+        <div class="bg-gradient-to-br from-blue-500/10 to-transparent p-6 rounded-2xl border border-blue-500/20">
+          <h3 class="text-xl font-bold text-blue-300 mb-2">eCPM</h3>
+          <p class="text-gray-400">Effective Cost Per Mille - actual earnings per 1,000 impressions</p>
+        </div>
+        <div class="bg-gradient-to-br from-pink-500/10 to-transparent p-6 rounded-2xl border border-pink-500/20">
+          <h3 class="text-xl font-bold text-pink-300 mb-2">vCPM</h3>
+          <p class="text-gray-400">Viewable Cost Per Mille - cost per 1,000 viewable impressions</p>
+        </div>
+      </div>
+    </div>
 
-      <h2>Tips for Optimizing Your CPM</h2>
-      <ol>
-        <li>Target the right audience demographics</li>
-        <li>Test different ad formats and placements</li>
-        <li>Monitor and adjust campaigns regularly</li>
-        <li>Improve ad relevance and quality scores</li>
-        <li>Choose optimal campaign timing</li>
-      </ol>
+    <!-- Platform Rates -->
+    <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] mb-12 animate-fade-in-up animation-delay-1200">
+      <h2 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 mb-4">Average CPM Rates by Platform (2024-2025)</h2>
+      <p class="text-gray-400 mb-6 text-sm">Based on industry research and advertising benchmarks from authoritative sources.</p>
+      <div class="space-y-4">
+        {[
+          { platform: 'Facebook Ads', range: '$5.61 - $12.58', color: 'from-blue-500 to-blue-600', note: 'Average varies by targeting and seasonality' },
+          { platform: 'Instagram Ads', range: '$2.50 - $10.83', color: 'from-pink-500 to-purple-600', note: 'Reels and Stories placements trending higher' },
+          { platform: 'Google Display Network', range: '$2.80 - $5.00', color: 'from-green-500 to-blue-600', note: 'Increases during holiday season' },
+          { platform: 'YouTube Ads', range: '$3.53 - $9.29', color: 'from-red-500 to-pink-600', note: 'Video format averages higher than display' },
+          { platform: 'LinkedIn Ads', range: '$5.01 - $33.80', color: 'from-blue-600 to-indigo-600', note: 'B2B targeting significantly increases costs' },
+        ].map(({ platform, range, color, note }) => (
+          <div class="p-4 rounded-xl bg-gradient-to-r from-white/5 to-transparent border border-white/10 hover:border-white/20 transition-all">
+            <div class="flex justify-between items-center mb-2">
+              <span class="font-semibold text-gray-200">{platform}</span>
+              <span class={`font-bold bg-clip-text text-transparent bg-gradient-to-r ${color}`}>{range}</span>
+            </div>
+            <p class="text-xs text-gray-500 italic">{note}</p>
+          </div>
+        ))}
+      </div>
+      
+      <!-- Sources Section -->
+      <div class="mt-8 pt-6 border-t border-white/10">
+        <h3 class="text-sm font-semibold text-gray-400 mb-3">Data Sources:</h3>
+        <div class="space-y-2 text-xs text-gray-500">
+          <p>• Facebook/Instagram: <a href="https://blog.hootsuite.com/facebook-advertising-cost/" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 underline">Hootsuite 2024</a>, <a href="https://www.awisee.com/instagram-ads-cost/" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 underline">Awisee 2025</a></p>
+          <p>• Google Display Network: <a href="https://www.gamerseo.com/blog/google-ads-cpm/" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 underline">GamerSEO 2024</a></p>
+          <p>• YouTube: <a href="https://megadigital.ai/blog/youtube-cpm/" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 underline">Mega Digital 2024</a>, <a href="https://www.adconversion.com/youtube-ads-benchmarks/" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 underline">AdConversion 2024</a></p>
+          <p>• LinkedIn: <a href="https://www.theb2bhouse.com/linkedin-ads-cost/" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 underline">The B2B House 2025</a>, <a href="https://inbeat.co/linkedin-ads-cost/" target="_blank" rel="noopener noreferrer" class="text-purple-400 hover:text-purple-300 underline">InBeat 2024</a></p>
+        </div>
+      </div>
+    </div>
 
-      <h2>Frequently Asked Questions</h2>
-      <h3>What is a good CPM rate?</h3>
-      <p>A good CPM rate varies by industry, platform, and target audience. Generally, $2-$10 is considered reasonable for display ads, while social media CPMs can range from $5-$20.</p>
+    <!-- Optimization Tips -->
+    <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] mb-12 animate-fade-in-up animation-delay-1350">
+      <h2 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 mb-6">Tips for Optimizing Your CPM</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        {[
+          'Target the right audience demographics',
+          'Test different ad formats and placements',
+          'Monitor and adjust campaigns regularly',
+          'Improve ad relevance and quality scores',
+          'Choose optimal campaign timing',
+        ].map((tip, index) => (
+          <div class="flex items-start p-4 rounded-xl bg-gradient-to-r from-purple-500/10 to-transparent border border-purple-500/20">
+            <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold mr-3">{index + 1}</span>
+            <p class="text-gray-300">{tip}</p>
+          </div>
+        ))}
+      </div>
+    </div>
 
-      <h3>Why use CPM bidding?</h3>
-      <p>CPM bidding is ideal for brand awareness campaigns where visibility is the primary goal. It's particularly effective for reaching large audiences and building brand recognition.</p>
+    <!-- FAQ Section -->
+    <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] animate-fade-in-up animation-delay-1500">
+      <h2 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        <div class="border-l-4 border-purple-500 pl-6">
+          <h3 class="text-xl font-bold text-purple-300 mb-2">What is a good CPM rate?</h3>
+          <p class="text-gray-400">A good CPM rate varies by industry, platform, and target audience. Generally, $2-$10 is considered reasonable for display ads, while social media CPMs can range from $5-$20.</p>
+        </div>
+        <div class="border-l-4 border-blue-500 pl-6">
+          <h3 class="text-xl font-bold text-blue-300 mb-2">Why use CPM bidding?</h3>
+          <p class="text-gray-400">CPM bidding is ideal for brand awareness campaigns where visibility is the primary goal. It's particularly effective for reaching large audiences and building brand recognition.</p>
+        </div>
+        <div class="border-l-4 border-pink-500 pl-6">
+          <h3 class="text-xl font-bold text-pink-300 mb-2">How can I lower my CPM?</h3>
+          <p class="text-gray-400">To lower your CPM, focus on improving ad relevance, targeting precision, and ad quality. Test different audience segments and optimize your campaigns based on performance data.</p>
+        </div>
+      </div>
+    </div>
 
-      <h3>How can I lower my CPM?</h3>
-      <p>To lower your CPM, focus on improving ad relevance, targeting precision, and ad quality. Test different audience segments and optimize your campaigns based on performance data.</p>
+    <!-- Related Tools Section -->
+    <div class="mt-12 animate-fade-in-up animation-delay-1650">
+      <RelatedTools currentPage="/cpm-calculator" />
     </div>
   </section>
 </Layout>
+
+<style>
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .animation-delay-150 {
+    animation-delay: 150ms;
+  }
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  .animation-delay-450 {
+    animation-delay: 450ms;
+  }
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  .animation-delay-750 {
+    animation-delay: 750ms;
+  }
+  .animation-delay-900 {
+    animation-delay: 900ms;
+  }
+  .animation-delay-1050 {
+    animation-delay: 1050ms;
+  }
+  .animation-delay-1200 {
+    animation-delay: 1200ms;
+  }
+  .animation-delay-1350 {
+    animation-delay: 1350ms;
+  }
+  .animation-delay-1500 {
+    animation-delay: 1500ms;
+  }
+  .animation-delay-1650 {
+    animation-delay: 1650ms;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import CalculateCostPerImpressionComponent from '~/components/common/CalculateCostPerImpression';
+import RelatedTools from '~/components/common/RelatedTools.astro';
 
 const metadata = {
   title: 'Calculate Cost Per Impression (CPI) - Free Online Calculator',
@@ -58,6 +59,11 @@ const metadata = {
 
       <h3>How can I reduce my CPI?</h3>
       <p>To reduce your CPI, focus on improving ad quality, targeting accuracy, and campaign timing. Regular testing and optimization of your ad creative and audience targeting can help lower costs while maintaining or improving performance.</p>
+    </div>
+    
+    <!-- Related Tools Section -->
+    <div class="mt-12">
+      <RelatedTools currentPage="/calculate-cost-per-impression" />
     </div>
   </section>
 </Layout>
