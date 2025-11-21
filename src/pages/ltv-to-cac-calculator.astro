@@ -1,0 +1,175 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import LTVToCACCalculator from '~/components/common/LTVToCACCalculator';
+import RelatedTools from '~/components/common/RelatedTools.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'LTV to CAC Calculator | Calculate Your Ratio',
+  description: 'Free LTV to CAC Ratio Calculator. Determine the health of your business by comparing Customer Lifetime Value to Customer Acquisition Cost.',
+  canonical: 'https://cpmcalculator.online/ltv-to-cac-calculator',
+  robots: {
+    index: true,
+    follow: true
+  }
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section with Animated Backgrounds -->
+  <section class="relative not-prose overflow-hidden min-h-[60vh] flex items-center">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute left-1/2 top-0 -translate-x-1/2 w-[1000px] h-[500px] bg-purple-600/30 blur-[120px] rounded-full mix-blend-screen animate-blob"></div>
+      <div class="absolute right-0 top-1/4 w-[800px] h-[600px] bg-blue-600/20 blur-[100px] rounded-full mix-blend-screen animate-blob animation-delay-2000"></div>
+      <div class="absolute left-0 bottom-0 w-[600px] h-[600px] bg-pink-600/20 blur-[100px] rounded-full mix-blend-screen animate-blob animation-delay-4000"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+      <div class="py-12 md:py-20 text-center">
+        <div class="flex justify-center mb-6">
+          <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 animate-fade-in-up">
+            Business Health Check
+          </p>
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-6 font-heading dark:text-gray-200 animate-fade-in-up animation-delay-150">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">LTV to CAC Calculator</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-muted mb-8 dark:text-slate-300 max-w-3xl mx-auto animate-fade-in-up animation-delay-300">
+          Are You Growing Sustainably?
+        </p>
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto animate-fade-in-up animation-delay-450">
+          Calculate the ratio between your Customer Lifetime Value and Acquisition Cost to measure the long-term health of your business.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator Section -->
+  <section class="relative px-4 sm:px-6 mx-auto lg:px-8 max-w-6xl -mt-8 mb-16">
+    <div class="animate-fade-in-up animation-delay-600">
+      <LTVToCACCalculator client:load />
+    </div>
+  </section>
+
+  <!-- Information Sections -->
+  <section class="px-4 sm:px-6 mx-auto lg:px-8 max-w-6xl pb-16">
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <!-- Why it matters -->
+      <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] animate-fade-in-up animation-delay-750">
+        <div class="flex items-center mb-4">
+          <Icon name="tabler:heart-rate-monitor" class="w-8 h-8 text-purple-400 mr-3" />
+          <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Why it Matters</h2>
+        </div>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          The LTV:CAC ratio is the ultimate indicator of your business's future. It tells you if you're spending too much to acquire customers (burning cash) or spending too little (missing growth opportunities).
+        </p>
+      </div>
+
+      <!-- Benchmarks -->
+      <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] animate-fade-in-up animation-delay-900">
+        <div class="flex items-center mb-4">
+          <Icon name="tabler:chart-bar" class="w-8 h-8 text-blue-400 mr-3" />
+          <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">Benchmarks</h2>
+        </div>
+        <ul class="space-y-3">
+          <li class="flex items-center">
+            <span class="w-3 h-3 rounded-full bg-red-500 mr-3"></span>
+            <span class="text-gray-600 dark:text-gray-300"><strong class="text-gray-900 dark:text-white">Less than 1:1</strong> - You are losing money.</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-3 h-3 rounded-full bg-yellow-500 mr-3"></span>
+            <span class="text-gray-600 dark:text-gray-300"><strong class="text-gray-900 dark:text-white">3:1</strong> - The industry standard for healthy growth.</span>
+          </li>
+          <li class="flex items-center">
+            <span class="w-3 h-3 rounded-full bg-green-500 mr-3"></span>
+            <span class="text-gray-600 dark:text-gray-300"><strong class="text-gray-900 dark:text-white">5:1 or higher</strong> - Highly profitable, consider scaling faster.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Optimization Tips -->
+    <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] mb-12 animate-fade-in-up animation-delay-1050">
+      <h2 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 mb-6">How to Improve Your Ratio</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gradient-to-br from-purple-500/10 to-transparent p-6 rounded-2xl border border-purple-500/20">
+          <h3 class="text-xl font-bold text-purple-600 dark:text-purple-300 mb-2">Increase LTV (Numerator)</h3>
+          <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 text-sm space-y-1">
+            <li>Raise prices or create premium tiers</li>
+            <li>Improve retention and reduce churn</li>
+            <li>Upsell and cross-sell to existing customers</li>
+          </ul>
+        </div>
+        <div class="bg-gradient-to-br from-blue-500/10 to-transparent p-6 rounded-2xl border border-blue-500/20">
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-300 mb-2">Decrease CAC (Denominator)</h3>
+          <ul class="list-disc list-inside text-gray-600 dark:text-gray-400 text-sm space-y-1">
+            <li>Optimize ad targeting and creative</li>
+            <li>Improve website conversion rate</li>
+            <li>Invest in organic channels (SEO, Content)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Tools Section -->
+    <div class="mt-12 animate-fade-in-up animation-delay-1650">
+      <RelatedTools currentPage="/ltv-to-cac-calculator" />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .animation-delay-150 { animation-delay: 150ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-450 { animation-delay: 450ms; }
+  .animation-delay-600 { animation-delay: 600ms; }
+  .animation-delay-750 { animation-delay: 750ms; }
+  .animation-delay-900 { animation-delay: 900ms; }
+  .animation-delay-1050 { animation-delay: 1050ms; }
+  .animation-delay-1200 { animation-delay: 1200ms; }
+  .animation-delay-1350 { animation-delay: 1350ms; }
+  .animation-delay-1500 { animation-delay: 1500ms; }
+  .animation-delay-1650 { animation-delay: 1650ms; }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
