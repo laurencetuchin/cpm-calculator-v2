@@ -9,9 +9,28 @@ import Stats from '~/components/widgets/Stats.astro';
 import HomeInfo from '~/components/common/HomeInfo';
 
 const metadata = {
-  title: 'CPM Calculator',
-  description: 'CPM Calculator is a free online calculator that helps calculate your CPM for Facebook, TikTok, Google, Instagram, Podcast, YouTube, Facebook, Snapchat, Twitter and more. Discover your best marketing campaign performance.',
+  title: 'CPM Calculator - Free Marketing Tool Suite for All Platforms',
+  description: 'CPM Calculator is a free online calculator that helps calculate your CPM for Facebook, TikTok, Google, Instagram, Podcast, YouTube, Snapchat, Twitter and more. Discover your best marketing campaign performance.',
   ignoreTitleTemplate: true,
+  openGraph: {
+    type: 'website',
+    url: 'https://cpmcalculator.online',
+    title: 'CPM Calculator - Free Marketing Tool Suite for All Platforms',
+    description: 'Free CPM Calculator for Facebook, TikTok, Instagram, YouTube, Google Ads, and influencer marketing. Calculate Cost Per Mille and optimize your advertising campaigns.',
+    images: [
+      {
+        url: '~/assets/images/default.png',
+        width: 1200,
+        height: 630,
+        alt: 'CPM Calculator - The Ultimate Marketing Tool Suite',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'CPM Calculator - Free Marketing Tool Suite',
+    description: 'Free CPM Calculator for Facebook, TikTok, Instagram, YouTube, Google Ads, and influencer marketing. Optimize your advertising campaigns.',
+  },
 };
 ---
 

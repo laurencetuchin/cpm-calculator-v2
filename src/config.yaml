@@ -11,7 +11,7 @@ metadata:
   title:
     default: CPM Calculator
     template: '%s — CPM Calculator'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: "Free CPM Calculator for marketing campaigns. Calculate Cost Per Mille (CPM) for Facebook, TikTok, Instagram, YouTube, Google Ads, and influencer marketing. Optimize your advertising spend with accurate CPM calculations."
   robots:
     index: true
     follow: true
@@ -20,11 +20,11 @@ metadata:
     images:
       - url: '~/assets/images/default.png'
         width: 1200
-        height: 628
+        height: 630
     type: website
   twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
+    handle: '@cpmcalculator'
+    site: '@cpmcalculator'
     cardType: summary_large_image
 
 i18n:
