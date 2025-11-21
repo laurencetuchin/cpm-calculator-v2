@@ -11,55 +11,141 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
-    <h1 class="font-bold font-heading text-4xl md:text-5xl leading-tighter tracking-tighter mb-4 text-center">
-      Influencer CPM Calculator
-    </h1>
-    
-    <div class="text-center mb-8 text-gray-700 dark:text-gray-300">
-      <p class="text-lg">
-        Calculate and analyze your influencer marketing campaign costs with our advanced CPM calculator. Get insights into both standard CPM and engagement-adjusted metrics.
+  <section class="relative px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl">
+    <!-- Hero Section -->
+    <div class="text-center mb-12 md:mb-16">
+      <div class="inline-flex items-center justify-center px-4 py-1 mb-4 text-sm font-semibold text-purple-600 bg-purple-100 rounded-full dark:bg-purple-900 dark:text-purple-200">
+        Influencer Marketing Tools
+      </div>
+      <h1 class="font-bold font-heading text-4xl md:text-5xl lg:text-6xl leading-tighter tracking-tighter mb-6">
+        Influencer <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">CPM Calculator</span>
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+        Optimize your influencer marketing budget. Calculate standard CPM and engagement-adjusted metrics to measure the true value of your campaigns.
       </p>
     </div>
 
-    <InfluencerCPMCalculator client:load />
+    <!-- Calculator Section -->
+    <div class="relative z-10 max-w-4xl mx-auto mb-16">
+      <div class="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10 blur-3xl -z-10 rounded-full opacity-50"></div>
+      <InfluencerCPMCalculator client:load />
+    </div>
 
-    <div class="mt-12 prose prose-lg max-w-4xl mx-auto dark:prose-invert">
-      <h2>Understanding Influencer Marketing CPM</h2>
-      <p>
-        CPM (Cost Per Mille) in influencer marketing helps brands understand the cost of reaching 1,000 followers or viewers through an influencer's content. Our calculator provides both standard CPM and engagement-adjusted CPM metrics to give you a complete picture of your campaign's efficiency.
-      </p>
+    <!-- Content Section -->
+    <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto mt-16">
+      <!-- Left Column: Understanding & Why -->
+      <div class="space-y-10">
+        <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="p-2 bg-blue-100 dark:bg-blue-900 rounded-lg text-blue-600 dark:text-blue-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </span>
+            Understanding Influencer CPM
+          </h2>
+          <p class="text-gray-600 dark:text-gray-400 leading-relaxed">
+            CPM (Cost Per Mille) in influencer marketing helps brands understand the cost of reaching 1,000 followers or viewers through an influencer's content. Unlike traditional ads, influencer CPM should be viewed alongside engagement metrics to get a complete picture of campaign efficiency.
+          </p>
+        </div>
 
-      <h2>Why Calculate Influencer CPM?</h2>
-      <ul>
-        <li>Compare costs across different influencers and platforms</li>
-        <li>Evaluate campaign performance with engagement-adjusted metrics</li>
-        <li>Make data-driven decisions about influencer partnerships</li>
-        <li>Optimize your influencer marketing budget allocation</li>
-      </ul>
+        <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="p-2 bg-green-100 dark:bg-green-900 rounded-lg text-green-600 dark:text-green-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </span>
+            Why Calculate It?
+          </h2>
+          <ul class="space-y-3 text-gray-600 dark:text-gray-400">
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span>Compare costs across different influencers and platforms objectively</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span>Evaluate campaign performance with engagement-adjusted metrics</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span>Make data-driven decisions about influencer partnerships</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-5 h-5 text-green-500 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              <span>Optimize your influencer marketing budget allocation</span>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-      <h2>How to Use This Calculator</h2>
-      <ol>
-        <li>Enter the expected impressions or reach for your influencer campaign</li>
-        <li>Input your total campaign cost, including influencer fees and additional expenses</li>
-        <li>Add the expected engagement rate for a more detailed analysis</li>
-        <li>Get instant results for both standard and engagement-adjusted CPM</li>
-      </ol>
+      <!-- Right Column: How to Use & Tips -->
+      <div class="space-y-10">
+        <div class="bg-white dark:bg-slate-900 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="p-2 bg-purple-100 dark:bg-purple-900 rounded-lg text-purple-600 dark:text-purple-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+              </svg>
+            </span>
+            How to Use
+          </h2>
+          <ol class="space-y-4 text-gray-600 dark:text-gray-400">
+            <li class="flex gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 flex items-center justify-center text-sm font-bold">1</span>
+              <span>Enter the expected <strong>impressions</strong> or reach for your influencer campaign.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 flex items-center justify-center text-sm font-bold">2</span>
+              <span>Input your <strong>total campaign cost</strong>, including influencer fees and additional expenses.</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 flex items-center justify-center text-sm font-bold">3</span>
+              <span>Add the expected <strong>engagement rate</strong> for a more detailed analysis (optional but recommended).</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-300 flex items-center justify-center text-sm font-bold">4</span>
+              <span>Get instant results for both standard and engagement-adjusted CPM.</span>
+            </li>
+          </ol>
+        </div>
 
-      <h2>Tips for Optimizing Influencer CPM</h2>
-      <p>
-        To get the most value from your influencer campaigns, consider these factors:
-      </p>
-      <ul>
-        <li>Audience alignment and authenticity</li>
-        <li>Historical engagement rates</li>
-        <li>Platform-specific performance metrics</li>
-        <li>Seasonal trends and timing</li>
-      </ul>
+        <div class="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 p-8 rounded-2xl border border-purple-100 dark:border-purple-800">
+          <h2 class="text-2xl font-bold mb-4 flex items-center gap-2">
+            <span class="p-2 bg-pink-100 dark:bg-pink-900 rounded-lg text-pink-600 dark:text-pink-300">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </span>
+            Optimization Tips
+          </h2>
+          <p class="mb-4 text-gray-600 dark:text-gray-400">
+            To get the most value from your influencer campaigns, consider these factors:
+          </p>
+          <ul class="space-y-2 text-gray-600 dark:text-gray-400">
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-pink-500"></span>
+              Audience alignment and authenticity
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-pink-500"></span>
+              Historical engagement rates
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-pink-500"></span>
+              Platform-specific performance metrics
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-pink-500"></span>
+              Seasonal trends and timing
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
     
     <!-- Related Tools Section -->
-    <div class="mt-12">
+    <div class="mt-20">
       <RelatedTools currentPage="/influencer-cpm-calculator" />
     </div>
   </section>

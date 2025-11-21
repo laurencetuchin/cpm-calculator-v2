@@ -1,0 +1,241 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import UTMBuilder from '~/components/common/UTMBuilder';
+import RelatedTools from '~/components/common/RelatedTools.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'UTM Link Builder | Google Analytics URL Generator',
+  description: 'Free UTM Link Builder to easily generate Google Analytics tracking URLs. Add campaign parameters to your URLs to track custom campaigns in Google Analytics.',
+  canonical: 'https://cpmcalculator.online/utm-builder',
+  robots: {
+    index: true,
+    follow: true
+  }
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section with Animated Backgrounds -->
+  <section class="relative not-prose overflow-hidden min-h-[60vh] flex items-center">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute left-1/2 top-0 -translate-x-1/2 w-[1000px] h-[500px] bg-purple-600/30 blur-[120px] rounded-full mix-blend-screen animate-blob"></div>
+      <div class="absolute right-0 top-1/4 w-[800px] h-[600px] bg-blue-600/20 blur-[100px] rounded-full mix-blend-screen animate-blob animation-delay-2000"></div>
+      <div class="absolute left-0 bottom-0 w-[600px] h-[600px] bg-pink-600/20 blur-[100px] rounded-full mix-blend-screen animate-blob animation-delay-4000"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+      <div class="py-12 md:py-20 text-center">
+        <div class="flex justify-center mb-6">
+          <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 animate-fade-in-up">
+            Professional Marketing Tool
+          </p>
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-6 font-heading dark:text-gray-200 animate-fade-in-up animation-delay-150">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">UTM Link Builder</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-muted mb-8 dark:text-slate-300 max-w-3xl mx-auto animate-fade-in-up animation-delay-300">
+          Generate Google Analytics Tracking URLs Instantly
+        </p>
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto animate-fade-in-up animation-delay-450">
+          Easily add campaign parameters to your URLs to track custom campaigns in Google Analytics 4 (GA4) and other analytics tools.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Builder Section -->
+  <section class="relative px-4 sm:px-6 mx-auto lg:px-8 max-w-6xl -mt-8 mb-16">
+    <div class="animate-fade-in-up animation-delay-600">
+      <UTMBuilder client:load />
+    </div>
+  </section>
+
+  <!-- Information Sections -->
+  <section class="px-4 sm:px-6 mx-auto lg:px-8 max-w-6xl pb-16">
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <!-- What are UTM Parameters -->
+      <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] animate-fade-in-up animation-delay-750">
+        <div class="flex items-center mb-4">
+          <Icon name="tabler:info-circle" class="w-8 h-8 text-purple-400 mr-3" />
+          <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">What are UTM Parameters?</h2>
+        </div>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          UTM (Urchin Tracking Module) parameters are simple code snippets that you can add to the end of a URL to track the performance of campaigns and content. They allow analytics tools like Google Analytics to tell you exactly where your traffic is coming from.
+        </p>
+      </div>
+
+      <!-- Why Use Them -->
+      <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] animate-fade-in-up animation-delay-900">
+        <div class="flex items-center mb-4">
+          <Icon name="tabler:chart-dots" class="w-8 h-8 text-blue-400 mr-3" />
+          <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">Why Use UTMs?</h2>
+        </div>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">
+          Without UTMs, traffic from emails, social media, and ads often gets lumped into "Direct" or "Referral" traffic. UTMs give you granular data to answer:
+        </p>
+        <ul class="list-disc list-inside text-gray-400 space-y-2 ml-2">
+          <li>Which marketing campaign is driving the most sales?</li>
+          <li>Which email newsletter link got the most clicks?</li>
+          <li>Is Facebook or Twitter generating more ROI?</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Parameter Definitions -->
+    <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] mb-12 animate-fade-in-up animation-delay-1050">
+      <h2 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 mb-6">The 5 UTM Parameters</h2>
+      <div class="space-y-4">
+        {[
+          { name: 'utm_source', desc: 'Identifies which site sent the traffic, and is a required parameter.', example: 'google, newsletter, facebook' },
+          { name: 'utm_medium', desc: 'Identifies what type of link was used, such as cost per click or email.', example: 'cpc, banner, email' },
+          { name: 'utm_campaign', desc: 'Identifies a specific product promotion or strategic campaign.', example: 'summer_sale, promo_code' },
+          { name: 'utm_term', desc: 'Identifies search terms.', example: 'running+shoes' },
+          { name: 'utm_content', desc: 'Identifies what specifically was clicked to bring the user to the site, such as a banner ad or a text link.', example: 'logolink, textlink' },
+        ].map(({ name, desc, example }) => (
+          <div class="p-4 rounded-xl bg-gradient-to-r from-white/5 to-transparent border border-white/10 hover:border-white/20 transition-all">
+            <div class="flex flex-col md:flex-row md:items-center mb-2">
+              <span class="font-mono font-bold text-purple-300 mr-3">{name}</span>
+              <span class="text-xs text-gray-500 italic md:ml-auto">Example: {example}</span>
+            </div>
+            <p class="text-gray-400 text-sm">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Industry Examples -->
+    <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] mb-12 animate-fade-in-up animation-delay-1150">
+      <h2 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 mb-6">Industry UTM Examples</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        {[
+          {
+            industry: 'E-commerce',
+            scenario: 'Summer Sale Facebook Ad',
+            params: { source: 'facebook', medium: 'cpc', campaign: 'summer_sale' },
+            color: 'from-blue-500 to-blue-600'
+          },
+          {
+            industry: 'SaaS / B2B',
+            scenario: 'LinkedIn Sponsored Post',
+            params: { source: 'linkedin', medium: 'sponsored', campaign: 'demo_request' },
+            color: 'from-blue-600 to-indigo-600'
+          },
+          {
+            industry: 'Newsletter',
+            scenario: 'Weekly Digest Link',
+            params: { source: 'newsletter', medium: 'email', campaign: 'weekly_digest' },
+            color: 'from-orange-500 to-red-600'
+          },
+          {
+            industry: 'Influencer Marketing',
+            scenario: 'Instagram Story Link',
+            params: { source: 'instagram', medium: 'story', campaign: 'influencer_name' },
+            color: 'from-pink-500 to-purple-600'
+          }
+        ].map((item) => (
+          <div class="p-5 rounded-2xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 hover:border-white/20 transition-all group">
+            <div class="flex justify-between items-center mb-3">
+              <span class={`text-sm font-bold px-3 py-1 rounded-full bg-gradient-to-r ${item.color} text-white`}>{item.industry}</span>
+              <span class="text-xs text-gray-400">{item.scenario}</span>
+            </div>
+            <div class="space-y-2 font-mono text-xs">
+              <div class="flex">
+                <span class="text-gray-500 w-24">utm_source:</span>
+                <span class="text-purple-300">{item.params.source}</span>
+              </div>
+              <div class="flex">
+                <span class="text-gray-500 w-24">utm_medium:</span>
+                <span class="text-blue-300">{item.params.medium}</span>
+              </div>
+              <div class="flex">
+                <span class="text-gray-500 w-24">utm_campaign:</span>
+                <span class="text-pink-300">{item.params.campaign}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Best Practices -->
+    <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] mb-12 animate-fade-in-up animation-delay-1200">
+      <h2 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 mb-6">Best Practices</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        {[
+          'Be consistent with naming conventions (lowercase is best)',
+          'Keep URLs short and descriptive',
+          'Do not use UTMs on internal links',
+          'Use a link shortener for social media',
+          'Track your UTMs in a spreadsheet',
+        ].map((tip, index) => (
+          <div class="flex items-start p-4 rounded-xl bg-gradient-to-r from-purple-500/10 to-transparent border border-purple-500/20">
+            <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold mr-3">{index + 1}</span>
+            <p class="text-gray-300">{tip}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Related Tools Section -->
+    <div class="mt-12 animate-fade-in-up animation-delay-1650">
+      <RelatedTools currentPage="/utm-builder" />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .animation-delay-150 { animation-delay: 150ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-450 { animation-delay: 450ms; }
+  .animation-delay-600 { animation-delay: 600ms; }
+  .animation-delay-750 { animation-delay: 750ms; }
+  .animation-delay-900 { animation-delay: 900ms; }
+  .animation-delay-1050 { animation-delay: 1050ms; }
+  .animation-delay-1200 { animation-delay: 1200ms; }
+  .animation-delay-1350 { animation-delay: 1350ms; }
+  .animation-delay-1500 { animation-delay: 1500ms; }
+  .animation-delay-1650 { animation-delay: 1650ms; }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
