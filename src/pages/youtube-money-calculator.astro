@@ -1,0 +1,162 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import YouTubeMoneyCalculator from '~/components/common/YouTubeMoneyCalculator';
+import RelatedTools from '~/components/common/RelatedTools.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'YouTube Money Calculator | Estimate Your Earnings',
+  description: 'Free YouTube Money Calculator. Estimate your daily, monthly, and yearly earnings from YouTube AdSense based on views and RPM.',
+  canonical: 'https://cpmcalculator.online/youtube-money-calculator',
+  robots: {
+    index: true,
+    follow: true
+  }
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section with Animated Backgrounds -->
+  <section class="relative not-prose overflow-hidden min-h-[60vh] flex items-center">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute left-1/2 top-0 -translate-x-1/2 w-[1000px] h-[500px] bg-red-600/30 blur-[120px] rounded-full mix-blend-screen animate-blob"></div>
+      <div class="absolute right-0 top-1/4 w-[800px] h-[600px] bg-orange-600/20 blur-[100px] rounded-full mix-blend-screen animate-blob animation-delay-2000"></div>
+      <div class="absolute left-0 bottom-0 w-[600px] h-[600px] bg-pink-600/20 blur-[100px] rounded-full mix-blend-screen animate-blob animation-delay-4000"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+      <div class="py-12 md:py-20 text-center">
+        <div class="flex justify-center mb-6">
+          <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-600 animate-fade-in-up">
+            Creator Economy Tools
+          </p>
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-6 font-heading dark:text-gray-200 animate-fade-in-up animation-delay-150">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-600">YouTube Money Calculator</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-muted mb-8 dark:text-slate-300 max-w-3xl mx-auto animate-fade-in-up animation-delay-300">
+          How Much Can You Make on YouTube?
+        </p>
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto animate-fade-in-up animation-delay-450">
+          Estimate your potential AdSense revenue based on your daily video views and niche RPM.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator Section -->
+  <section class="relative px-4 sm:px-6 mx-auto lg:px-8 max-w-6xl -mt-8 mb-16">
+    <div class="animate-fade-in-up animation-delay-600">
+      <YouTubeMoneyCalculator client:load />
+    </div>
+  </section>
+
+  <!-- Information Sections -->
+  <section class="px-4 sm:px-6 mx-auto lg:px-8 max-w-6xl pb-16">
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <!-- RPM vs CPM -->
+      <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(220,38,38,0.1)] animate-fade-in-up animation-delay-750">
+        <div class="flex items-center mb-4">
+          <Icon name="tabler:coin" class="w-8 h-8 text-red-500 mr-3" />
+          <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-orange-600">RPM vs CPM</h2>
+        </div>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+          It's crucial to know the difference:
+        </p>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <span class="w-2 h-2 mt-2 rounded-full bg-red-500 mr-3 shrink-0"></span>
+            <span class="text-gray-600 dark:text-gray-300"><strong class="text-gray-900 dark:text-white">CPM (Cost Per Mille):</strong> What advertisers pay YouTube for 1,000 ad impressions.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="w-2 h-2 mt-2 rounded-full bg-green-500 mr-3 shrink-0"></span>
+            <span class="text-gray-600 dark:text-gray-300"><strong class="text-gray-900 dark:text-white">RPM (Revenue Per Mille):</strong> What YOU actually take home per 1,000 views (after YouTube takes their 45% cut).</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Factors -->
+      <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(220,38,38,0.1)] animate-fade-in-up animation-delay-900">
+        <div class="flex items-center mb-4">
+          <Icon name="tabler:chart-dots" class="w-8 h-8 text-orange-500 mr-3" />
+          <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-red-600">What Affects Earnings?</h2>
+        </div>
+        <div class="space-y-4">
+          <div>
+            <h3 class="font-bold text-gray-900 dark:text-white">1. Niche / Topic</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Finance, Tech, and Business channels have the highest RPMs ($10-$20+). Gaming, Vlogs, and Comedy are typically lower ($1-$3).</p>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-900 dark:text-white">2. Geography</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Views from Tier 1 countries (USA, UK, Australia, Canada) pay significantly more than views from other regions.</p>
+          </div>
+          <div>
+            <h3 class="font-bold text-gray-900 dark:text-white">3. Video Length</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Videos over 8 minutes can have mid-roll ads, doubling or tripling potential revenue.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Tools Section -->
+    <div class="mt-12 animate-fade-in-up animation-delay-1650">
+      <RelatedTools currentPage="/youtube-money-calculator" />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .animation-delay-150 { animation-delay: 150ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-450 { animation-delay: 450ms; }
+  .animation-delay-600 { animation-delay: 600ms; }
+  .animation-delay-750 { animation-delay: 750ms; }
+  .animation-delay-900 { animation-delay: 900ms; }
+  .animation-delay-1050 { animation-delay: 1050ms; }
+  .animation-delay-1200 { animation-delay: 1200ms; }
+  .animation-delay-1350 { animation-delay: 1350ms; }
+  .animation-delay-1500 { animation-delay: 1500ms; }
+  .animation-delay-1650 { animation-delay: 1650ms; }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
