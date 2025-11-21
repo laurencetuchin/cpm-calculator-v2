@@ -1,0 +1,164 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import BreakEvenROASCalculator from '~/components/common/BreakEvenROASCalculator';
+import RelatedTools from '~/components/common/RelatedTools.astro';
+import { Icon } from 'astro-icon/components';
+
+const metadata = {
+  title: 'Break-Even ROAS Calculator | Shopify Profitability Tool',
+  description: 'Calculate your Break-Even ROAS (Return on Ad Spend) to ensure your Shopify store is profitable. Determine your maximum CPA and profit margins instantly.',
+  canonical: 'https://cpmcalculator.online/break-even-roas-calculator',
+  robots: {
+    index: true,
+    follow: true
+  }
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Section with Animated Backgrounds -->
+  <section class="relative not-prose overflow-hidden min-h-[60vh] flex items-center">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute left-1/2 top-0 -translate-x-1/2 w-[1000px] h-[500px] bg-purple-600/30 blur-[120px] rounded-full mix-blend-screen animate-blob"></div>
+      <div class="absolute right-0 top-1/4 w-[800px] h-[600px] bg-blue-600/20 blur-[100px] rounded-full mix-blend-screen animate-blob animation-delay-2000"></div>
+      <div class="absolute left-0 bottom-0 w-[600px] h-[600px] bg-pink-600/20 blur-[100px] rounded-full mix-blend-screen animate-blob animation-delay-4000"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+      <div class="py-12 md:py-20 text-center">
+        <div class="flex justify-center mb-6">
+          <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 animate-fade-in-up">
+            For Shopify & E-commerce
+          </p>
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-6 font-heading dark:text-gray-200 animate-fade-in-up animation-delay-150">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Break-Even ROAS Calculator</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-muted mb-8 dark:text-slate-300 max-w-3xl mx-auto animate-fade-in-up animation-delay-300">
+          Know Your Numbers. Stop Losing Money on Ads.
+        </p>
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto animate-fade-in-up animation-delay-450">
+          Calculate the exact Return on Ad Spend (ROAS) you need to cover your product costs and start making a profit.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Calculator Section -->
+  <section class="relative px-4 sm:px-6 mx-auto lg:px-8 max-w-6xl -mt-8 mb-16">
+    <div class="animate-fade-in-up animation-delay-600">
+      <BreakEvenROASCalculator client:load />
+    </div>
+  </section>
+
+  <!-- Information Sections -->
+  <section class="px-4 sm:px-6 mx-auto lg:px-8 max-w-6xl pb-16">
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <!-- What is Break-Even ROAS -->
+      <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] animate-fade-in-up animation-delay-750">
+        <div class="flex items-center mb-4">
+          <Icon name="tabler:info-circle" class="w-8 h-8 text-purple-400 mr-3" />
+          <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">What is Break-Even ROAS?</h2>
+        </div>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          Break-Even ROAS is the specific ROAS number where your ad revenue exactly equals your total costs (Product Cost + Shipping + Ad Spend). If your actual ROAS is higher than this number, you are profitable. If it's lower, you are losing money.
+        </p>
+      </div>
+
+      <!-- The Formula -->
+      <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] animate-fade-in-up animation-delay-900">
+        <div class="flex items-center mb-4">
+          <Icon name="tabler:math-function" class="w-8 h-8 text-blue-400 mr-3" />
+          <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">The Formula</h2>
+        </div>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">The simplest way to calculate it is:</p>
+        <div class="bg-gradient-to-r from-purple-500/10 to-blue-500/10 p-4 rounded-xl border border-purple-500/20 mb-4">
+          <code class="text-purple-600 dark:text-purple-300 font-mono font-bold">Break-Even ROAS = Selling Price / Profit Margin ($)</code>
+        </div>
+        <p class="text-sm text-gray-500 dark:text-gray-400">
+          Example: If you sell a shirt for $50 and your profit (before ads) is $25, your Break-Even ROAS is 2.0 ($50 / $25).
+        </p>
+      </div>
+    </div>
+
+    <!-- Optimization Tips -->
+    <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] mb-12 animate-fade-in-up animation-delay-1050">
+      <h2 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 mb-6">How to Lower Your Break-Even Point</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-gradient-to-br from-purple-500/10 to-transparent p-6 rounded-2xl border border-purple-500/20">
+          <h3 class="text-xl font-bold text-purple-600 dark:text-purple-300 mb-2">Increase AOV</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">Use bundles, upsells, and cross-sells to increase the Average Order Value. Higher AOV means better margins.</p>
+        </div>
+        <div class="bg-gradient-to-br from-blue-500/10 to-transparent p-6 rounded-2xl border border-blue-500/20">
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-300 mb-2">Lower COGS</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">Negotiate better rates with suppliers or optimize your packaging to reduce Cost of Goods Sold.</p>
+        </div>
+        <div class="bg-gradient-to-br from-pink-500/10 to-transparent p-6 rounded-2xl border border-pink-500/20">
+          <h3 class="text-xl font-bold text-pink-600 dark:text-pink-300 mb-2">Increase LTV</h3>
+          <p class="text-gray-600 dark:text-gray-400 text-sm">Focus on email marketing and retention. If customers buy again, you can afford a lower ROAS on the first purchase.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Tools Section -->
+    <div class="mt-12 animate-fade-in-up animation-delay-1650">
+      <RelatedTools currentPage="/break-even-roas-calculator" />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .animation-delay-150 { animation-delay: 150ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-450 { animation-delay: 450ms; }
+  .animation-delay-600 { animation-delay: 600ms; }
+  .animation-delay-750 { animation-delay: 750ms; }
+  .animation-delay-900 { animation-delay: 900ms; }
+  .animation-delay-1050 { animation-delay: 1050ms; }
+  .animation-delay-1200 { animation-delay: 1200ms; }
+  .animation-delay-1350 { animation-delay: 1350ms; }
+  .animation-delay-1500 { animation-delay: 1500ms; }
+  .animation-delay-1650 { animation-delay: 1650ms; }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
