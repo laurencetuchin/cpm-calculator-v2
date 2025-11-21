@@ -7,6 +7,7 @@ interface Tool {
   href: string;
   icon: string;
   gradient: string;
+  bgGradient: string;
 }
 
 interface Props {
@@ -21,35 +22,40 @@ const allTools: Tool[] = [
     description: 'Calculate Cost Per Thousand Impressions for your advertising campaigns',
     href: '/cpm-calculator',
     icon: 'tabler:calculator',
-    gradient: 'from-purple-400 to-pink-600'
+    gradient: 'from-purple-400 to-pink-600',
+    bgGradient: 'from-purple-500/20 to-pink-500/20'
   },
   {
     title: 'CPM to CPC Calculator',
     description: 'Convert CPM to CPC and compare pricing models',
     href: '/cpm-to-cpc-calculator',
     icon: 'tabler:arrows-exchange',
-    gradient: 'from-blue-400 to-purple-600'
+    gradient: 'from-blue-400 to-purple-600',
+    bgGradient: 'from-blue-500/20 to-purple-500/20'
   },
   {
     title: 'Cost Per Impression Calculator',
     description: 'Calculate the cost for individual ad impressions',
     href: '/calculate-cost-per-impression',
     icon: 'tabler:eye',
-    gradient: 'from-green-400 to-blue-600'
+    gradient: 'from-green-400 to-blue-600',
+    bgGradient: 'from-green-500/20 to-blue-500/20'
   },
   {
     title: 'Influencer CPM Calculator',
     description: 'Calculate CPM and engagement metrics for influencer marketing',
     href: '/influencer-cpm-calculator',
     icon: 'tabler:users',
-    gradient: 'from-pink-400 to-purple-600'
+    gradient: 'from-pink-400 to-purple-600',
+    bgGradient: 'from-pink-500/20 to-purple-500/20'
   },
   {
     title: 'TikTok Ads Calculator',
     description: 'Calculate CPM, CPC, CTR and more for TikTok advertising',
     href: '/tiktok-ads-calculator',
     icon: 'tabler:brand-tiktok',
-    gradient: 'from-cyan-400 to-pink-600'
+    gradient: 'from-cyan-400 to-pink-600',
+    bgGradient: 'from-cyan-500/20 to-pink-500/20'
   }
 ];
 
@@ -57,42 +63,77 @@ const allTools: Tool[] = [
 const relatedTools = allTools.filter(tool => tool.href !== currentPage);
 ---
 
-<section class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)]">
-  <div class="flex items-center mb-6">
-    <Icon name="tabler:tools" class="w-8 h-8 text-purple-400 mr-3" />
-    <h2 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
-      Related Marketing Tools
-    </h2>
-  </div>
-  
-  <p class="text-gray-400 mb-8">
-    Explore our suite of free marketing calculators to optimize your advertising campaigns
-  </p>
+<section class="relative isolate overflow-hidden bg-gray-900 rounded-[2.5rem] p-8 md:p-12 border border-white/10 shadow-2xl">
+  <!-- Background Effects -->
+  <div class="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-purple-500/30 rounded-full blur-[100px] pointer-events-none"></div>
+  <div class="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-96 h-96 bg-blue-500/30 rounded-full blur-[100px] pointer-events-none"></div>
 
-  <div class="grid md:grid-cols-2 gap-6">
-    {relatedTools.map((tool) => (
-      <a 
-        href={tool.href}
-        class="group relative p-6 rounded-2xl bg-gradient-to-br from-white/5 to-transparent border border-white/10 hover:border-white/30 transition-all duration-300 hover:shadow-[0_0_30px_rgba(139,92,246,0.2)] hover:scale-[1.02]"
-      >
-        <div class="flex items-start mb-3">
-          <div class={`flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-r ${tool.gradient} flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300`}>
-            <Icon name={tool.icon} class="w-6 h-6 text-white" />
+  <div class="relative z-10">
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="p-2 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm">
+            <Icon name="tabler:tools" class="w-6 h-6 text-purple-400" />
           </div>
-          <div class="flex-1">
-            <h3 class={`text-lg font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r ${tool.gradient} group-hover:opacity-80 transition-opacity`}>
-              {tool.title}
-            </h3>
-          </div>
+          <span class="text-sm font-medium text-purple-400 tracking-wider uppercase">Explore More</span>
         </div>
-        <p class="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">
-          {tool.description}
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Related <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Marketing Tools</span>
+        </h2>
+        <p class="text-gray-400 text-lg max-w-xl">
+          Supercharge your marketing strategy with our suite of powerful, free calculators designed for modern advertisers.
         </p>
-        
-        <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-          <Icon name="tabler:arrow-right" class="w-5 h-5 text-purple-400" />
-        </div>
+      </div>
+      
+      <a href="/" class="hidden md:flex items-center gap-2 text-white/70 hover:text-white transition-colors group">
+        <span>View all tools</span>
+        <Icon name="tabler:arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
       </a>
-    ))}
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {relatedTools.map((tool) => (
+        <a 
+          href={tool.href}
+          class="group relative p-1 rounded-3xl bg-gradient-to-b from-white/10 to-white/5 hover:from-purple-500/50 hover:to-pink-500/50 transition-all duration-500"
+        >
+          <div class="relative h-full bg-gray-900/90 backdrop-blur-xl rounded-[1.4rem] p-6 md:p-8 overflow-hidden transition-all duration-500 group-hover:bg-gray-900/80">
+            <!-- Hover Gradient Blob -->
+            <div class={`absolute -right-10 -top-10 w-32 h-32 bg-gradient-to-br ${tool.gradient} opacity-20 blur-2xl group-hover:opacity-40 group-hover:scale-150 transition-all duration-700`}></div>
+            
+            <div class="relative z-10 flex flex-col h-full">
+              <div class="flex items-start justify-between mb-6">
+                <div class={`p-3 rounded-2xl bg-gradient-to-br ${tool.bgGradient} border border-white/10 group-hover:scale-110 transition-transform duration-500`}>
+                  <Icon name={tool.icon} class="w-8 h-8 text-white" />
+                </div>
+                <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                  <Icon name="tabler:arrow-up-right" class="w-5 h-5 text-white/50 group-hover:text-white transition-colors" />
+                </div>
+              </div>
+
+              <h3 class="text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-white/70 transition-all">
+                {tool.title}
+              </h3>
+              
+              <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+                {tool.description}
+              </p>
+
+              <div class="flex items-center gap-2 text-xs font-medium text-white/50 group-hover:text-white/80 transition-colors uppercase tracking-wider">
+                <span>Try Calculator</span>
+                <Icon name="tabler:chevron-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <div class="mt-8 text-center md:hidden">
+      <a href="/" class="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors group">
+        <span>View all tools</span>
+        <Icon name="tabler:arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+      </a>
+    </div>
   </div>
 </section>
