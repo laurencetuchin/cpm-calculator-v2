@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const InfluencerCPMCalculator = () => {
   const [impressions, setImpressions] = useState('');
@@ -59,6 +60,11 @@ const InfluencerCPMCalculator = () => {
     }
   };
 
+  const handlePresetClick = (type: 'impressions' | 'cost', value: number) => {
+    if (type === 'impressions') setImpressions(value.toString());
+    else setCost(value.toString());
+  };
+
   return (
     <div className="w-full max-w-4xl mx-auto p-8 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md rounded-3xl shadow-xl border border-white/20 dark:border-slate-700/30">
       <div className="grid md:grid-cols-2 gap-12">
@@ -92,6 +98,35 @@ const InfluencerCPMCalculator = () => {
                 </svg>
               </div>
             </div>
+            <div className="mt-3">
+              <input
+                type="range"
+                min="0"
+                max="2000000"
+                step="10000"
+                value={impressions || 0}
+                onChange={(e) => setImpressions(e.target.value)}
+                className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer slider-thumb"
+                style={{
+                  background: impressions
+                    ? `linear-gradient(to right, var(--aw-color-primary) 0%, var(--aw-color-primary) ${(parseFloat(impressions) / 2000000) * 100}%, rgb(229 231 235) ${(parseFloat(impressions) / 2000000) * 100}%, rgb(229 231 235) 100%)`
+                    : undefined
+                }}
+              />
+            </div>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {[10000, 50000, 100000, 500000, 1000000].map((value) => (
+                <motion.button
+                  whileHover={{ scale: 1.05, backgroundColor: 'var(--aw-color-primary)', color: 'white' }}
+                  whileTap={{ scale: 0.95 }}
+                  key={value}
+                  onClick={() => handlePresetClick('impressions', value)}
+                  className="text-xs px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 transition-colors"
+                >
+                  {value.toLocaleString()}
+                </motion.button>
+              ))}
+            </div>
           </div>
 
           <div>
@@ -107,6 +142,35 @@ const InfluencerCPMCalculator = () => {
                 className="w-full pl-8 pr-4 py-3 bg-gray-50 dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all dark:text-white"
                 placeholder="e.g. 1,000"
               />
+            </div>
+            <div className="mt-3">
+              <input
+                type="range"
+                min="0"
+                max="20000"
+                step="100"
+                value={cost || 0}
+                onChange={(e) => setCost(e.target.value)}
+                className="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer slider-thumb"
+                style={{
+                  background: cost
+                    ? `linear-gradient(to right, var(--aw-color-primary) 0%, var(--aw-color-primary) ${(parseFloat(cost) / 20000) * 100}%, rgb(229 231 235) ${(parseFloat(cost) / 20000) * 100}%, rgb(229 231 235) 100%)`
+                    : undefined
+                }}
+              />
+            </div>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {[100, 500, 1000, 5000, 10000].map((value) => (
+                <motion.button
+                  whileHover={{ scale: 1.05, backgroundColor: 'var(--aw-color-primary)', color: 'white' }}
+                  whileTap={{ scale: 0.95 }}
+                  key={value}
+                  onClick={() => handlePresetClick('cost', value)}
+                  className="text-xs px-3 py-1.5 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 transition-colors"
+                >
+                  ${value}
+                </motion.button>
+              ))}
             </div>
           </div>
 
