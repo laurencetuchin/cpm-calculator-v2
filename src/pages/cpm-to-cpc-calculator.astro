@@ -1,7 +1,8 @@
---- 
+---
 import Layout from '~/layouts/PageLayout.astro';
 import CPMToCPCCalculator from '~/components/common/CPMToCPCCalculator';
 import RelatedTools from '~/components/common/RelatedTools.astro';
+import { Icon } from 'astro-icon/components';
 
 const metadata = {
   title: 'CPM to CPC Calculator | Convert Ad Pricing Models',
@@ -29,21 +30,169 @@ const metadata = {
 };
 ---
 
+<Layout metadata={metadata}>
+  <!-- Hero Section with Animated Backgrounds -->
+  <section class="relative not-prose overflow-hidden min-h-[60vh] flex items-center">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute left-1/2 top-0 -translate-x-1/2 w-[1000px] h-[500px] bg-purple-600/30 blur-[120px] rounded-full mix-blend-screen animate-blob"></div>
+      <div class="absolute right-0 top-1/4 w-[800px] h-[600px] bg-blue-600/20 blur-[100px] rounded-full mix-blend-screen animate-blob animation-delay-2000"></div>
+      <div class="absolute left-0 bottom-0 w-[600px] h-[600px] bg-pink-600/20 blur-[100px] rounded-full mix-blend-screen animate-blob animation-delay-4000"></div>
+    </div>
 
-    <Layout metadata={metadata}>
-      <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
-        <h1 class="font-bold font-heading text-4xl md:text-5xl leading-tighter tracking-tighter mb-8 text-center">
-          CPM to CPC Calculator
-        </h1>
-        <CPMToCPCCalculator client:load  />
-        
-        <!-- Related Tools Section -->
-        <div class="mt-12">
-          <RelatedTools currentPage="/cpm-to-cpc-calculator" />
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 w-full">
+      <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+      <div class="py-12 md:py-20 text-center">
+        <div class="flex justify-center mb-6">
+          <p class="text-base text-secondary dark:text-blue-200 font-bold tracking-wide uppercase bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 animate-fade-in-up">
+            Ad Metric Converter
+          </p>
         </div>
-      </section>
-    </Layout>
+        <h1 class="text-5xl md:text-6xl font-bold leading-tighter tracking-tighter mb-6 font-heading dark:text-gray-200 animate-fade-in-up animation-delay-150">
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">CPM to CPC Calculator</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-muted mb-8 dark:text-slate-300 max-w-3xl mx-auto animate-fade-in-up animation-delay-300">
+          Convert Cost Per Mille to Cost Per Click
+        </p>
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto animate-fade-in-up animation-delay-450">
+          Easily convert your CPM rates to estimated CPC based on your Click-Through Rate (CTR). Compare pricing models and optimize your ad strategy.
+        </p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Calculator Section -->
+  <section class="relative px-4 sm:px-6 mx-auto lg:px-8 max-w-6xl -mt-8 mb-16">
+    <div class="animate-fade-in-up animation-delay-600">
+      <CPMToCPCCalculator client:load />
+    </div>
+  </section>
 
+  <!-- Information Sections -->
+  <section class="px-4 sm:px-6 mx-auto lg:px-8 max-w-6xl pb-16">
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <!-- What is CPM to CPC Card -->
+      <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] animate-fade-in-up animation-delay-750">
+        <div class="flex items-center mb-4">
+          <Icon name="tabler:info-circle" class="w-8 h-8 text-purple-400 mr-3" />
+          <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Why Convert CPM to CPC?</h2>
+        </div>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+          Converting CPM (Cost Per Mille) to CPC (Cost Per Click) helps you compare different advertising pricing models. It allows you to estimate how much you are effectively paying for each click when buying impressions, or vice versa. This is crucial for optimizing campaigns across platforms that use different bidding strategies.
+        </p>
+      </div>
 
+      <!-- Formula Card -->
+      <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] animate-fade-in-up animation-delay-900">
+        <div class="flex items-center mb-4">
+          <Icon name="tabler:calculator" class="w-8 h-8 text-blue-400 mr-3" />
+          <h2 class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">The Conversion Formula</h2>
+        </div>
+        <p class="text-gray-700 dark:text-gray-300 mb-4">The formula to convert CPM to CPC is:</p>
+        <div class="bg-gradient-to-r from-purple-500/10 to-blue-500/10 p-4 rounded-xl border border-purple-500/20 mb-4">
+          <code class="text-purple-300 font-mono">CPC = CPM / (CTR × 1000)</code>
+        </div>
+        <p class="text-sm text-gray-500">Note: CTR should be a decimal (e.g., 0.01 for 1%). If using percentage (e.g., 1), divide by 100 first.</p>
+      </div>
+    </div>
 
+    <!-- Comparison Table -->
+    <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] mb-12 animate-fade-in-up animation-delay-1050">
+      <h2 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 mb-6">CPM vs. CPC: When to Use Which?</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-gradient-to-br from-purple-500/10 to-transparent p-6 rounded-2xl border border-purple-500/20">
+          <h3 class="text-xl font-bold text-purple-300 mb-4">Choose CPM When:</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li class="flex items-start"><Icon name="tabler:check" class="w-5 h-5 text-green-400 mr-2 mt-0.5" />Brand awareness is the primary goal</li>
+            <li class="flex items-start"><Icon name="tabler:check" class="w-5 h-5 text-green-400 mr-2 mt-0.5" />You have high-performing creatives with high CTR</li>
+            <li class="flex items-start"><Icon name="tabler:check" class="w-5 h-5 text-green-400 mr-2 mt-0.5" />You want maximum reach and visibility</li>
+          </ul>
+        </div>
+        <div class="bg-gradient-to-br from-blue-500/10 to-transparent p-6 rounded-2xl border border-blue-500/20">
+          <h3 class="text-xl font-bold text-blue-300 mb-4">Choose CPC When:</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li class="flex items-start"><Icon name="tabler:check" class="w-5 h-5 text-green-400 mr-2 mt-0.5" />Driving traffic or conversions is the goal</li>
+            <li class="flex items-start"><Icon name="tabler:check" class="w-5 h-5 text-green-400 mr-2 mt-0.5" />You are testing new creatives or audiences</li>
+            <li class="flex items-start"><Icon name="tabler:check" class="w-5 h-5 text-green-400 mr-2 mt-0.5" />You have a limited budget and need guaranteed clicks</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 shadow-[0_0_40px_rgba(139,92,246,0.1)] animate-fade-in-up animation-delay-1200">
+      <h2 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 mb-8">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        <div class="border-l-4 border-purple-500 pl-6">
+          <h3 class="text-xl font-bold text-purple-300 mb-2">Does a higher CTR lower my effective CPC?</h3>
+          <p class="text-gray-400">Yes! If you are paying by CPM, a higher Click-Through Rate (CTR) means you get more clicks for the same price, effectively lowering your Cost Per Click (CPC).</p>
+        </div>
+        <div class="border-l-4 border-blue-500 pl-6">
+          <h3 class="text-xl font-bold text-blue-300 mb-2">What is a good CTR?</h3>
+          <p class="text-gray-400">A "good" CTR varies by industry and platform. Generally, a CTR above 1% is considered good for display ads, while search ads often see CTRs of 3-5% or higher.</p>
+        </div>
+        <div class="border-l-4 border-pink-500 pl-6">
+          <h3 class="text-xl font-bold text-pink-300 mb-2">Can I switch between CPM and CPC?</h3>
+          <p class="text-gray-400">Most major advertising platforms (like Google Ads and Facebook Ads) allow you to choose your bidding strategy. You can often switch between CPM and CPC bidding depending on your campaign goals.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Related Tools Section -->
+    <div class="mt-12 animate-fade-in-up animation-delay-1350">
+      <RelatedTools currentPage="/cpm-to-cpc-calculator" />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  
+  .animation-delay-150 { animation-delay: 150ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+  .animation-delay-450 { animation-delay: 450ms; }
+  .animation-delay-600 { animation-delay: 600ms; }
+  .animation-delay-750 { animation-delay: 750ms; }
+  .animation-delay-900 { animation-delay: 900ms; }
+  .animation-delay-1050 { animation-delay: 1050ms; }
+  .animation-delay-1200 { animation-delay: 1200ms; }
+  .animation-delay-1350 { animation-delay: 1350ms; }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
