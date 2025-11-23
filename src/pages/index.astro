@@ -3,6 +3,7 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import HomeHero from '~/components/widgets/HomeHero.astro';
 import CalculatorShowcase from '~/components/common/CalculatorShowcase';
+import RelatedTools from '~/components/common/RelatedTools.astro';
 import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
@@ -61,6 +62,10 @@ const metadata = {
     <CalculatorShowcase client:visible />
   </div>
 
+  <div class="px-4 py-16 mx-auto max-w-6xl lg:px-8 lg:py-20">
+    <RelatedTools />
+  </div>
+
   <div id="features">
     <BlogLatestPosts
       title="Find out more content in our Blog"
@@ -83,9 +88,9 @@ const metadata = {
           "I wanted to make a solution that marketers can easily use to calculate information on their campaign performance so that they can get the best results possible for clients.",
       },
       {
-        title: 'What do I need to start?',
+        title: 'What tools are available?',
         description:
-          'Using CPM Calculator is really simple, just enter the information such as Campaign cost, number of impressions or a fixed CPM cost and it will automatically calculate once you have entered the information.',
+          'We offer a comprehensive suite of free marketing tools including CPM Calculator, CPM to CPC Converter, Influencer CPM Calculator, TikTok Ads Calculator, ROAS Calculator, and many more to help you optimize every aspect of your campaigns.',
       },
       {
         title: 'How can I remember this website?',
@@ -98,9 +103,9 @@ const metadata = {
           "CPM (Cost Per Mille) measures the cost per thousand impressions, while CPC (Cost Per Click) measures the cost for each click on your ad. CPM is useful for brand awareness campaigns, whereas CPC is more suitable for direct response campaigns.",
       },
       {
-        title: "How can I improve my campaign's CPM?",
+        title: "Do you have tools for Influencer Marketing?",
         description:
-          "To improve your CPM, focus on creating engaging content, targeting the right audience, optimizing ad placements, and testing different ad formats. Regularly analyze your campaign performance and make data-driven adjustments to increase efficiency.",
+          "Yes! Our Influencer CPM Calculator helps you evaluate influencer partnerships by calculating cost per 1,000 followers and engagement-adjusted CPM, giving you a clearer picture of true campaign value.",
       },
       {
         title: 'What factors should I consider when setting a campaign budget?',
@@ -116,8 +121,10 @@ const metadata = {
 
   <Stats
     stats={[
-      { title: 'Visitors', amount: '10K' },
-      { title: 'Users', amount: '0.4k' },
+      { title: 'Calculations', amount: '1M+' },
+      { title: 'Free Tools', amount: '10+' },
+      { title: 'Platforms', amount: '12+' },
+      { title: 'Happy Users', amount: '50K+' },
     ]}
   />
 

@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import CPMCalculator from './CPMCalculator';
 import ImpressionsCalculator from './ImpressionsCalculator';
 import CostPerImpressionCalculator from './CostPerImpressionCalculator';
+import InfluencerCPMCalculator from './InfluencerCPMCalculator';
+import CPMToCPCCalculator from './CPMToCPCCalculator';
 
 const CalculatorShowcase = () => {
     const [activeTab, setActiveTab] = useState('cpm');
@@ -11,6 +13,8 @@ const CalculatorShowcase = () => {
         { id: 'cpm', label: 'CPM Calculator', component: CPMCalculator },
         { id: 'impressions', label: 'Impressions', component: ImpressionsCalculator },
         { id: 'cost', label: 'Cost Per Impression', component: CostPerImpressionCalculator },
+        { id: 'influencer', label: 'Influencer CPM', component: InfluencerCPMCalculator },
+        { id: 'cpm-to-cpc', label: 'CPM to CPC', component: CPMToCPCCalculator },
     ];
 
     return (
