@@ -78,8 +78,12 @@ export default ({ config: _themeConfig = 'src/config.yaml' } = {}) => {
         try {
           const outDir = cfg.outDir;
           const publicDir = cfg.publicDir;
-          const sitemapName = 'sitemap.xml';
-          const sitemapFile = new URL(sitemapName, outDir);
+          let sitemapName = 'sitemap.xml';
+          let sitemapFile = new URL(sitemapName, outDir);
+          if (!fs.existsSync(sitemapFile)) {
+            sitemapName = 'sitemap-index.xml';
+            sitemapFile = new URL(sitemapName, outDir);
+          }
           const robotsTxtFile = new URL('robots.txt', publicDir);
           const robotsTxtFileInOut = new URL('robots.txt', outDir);
 
