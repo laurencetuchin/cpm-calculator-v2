@@ -1,0 +1,269 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import RelatedTools from '~/components/common/RelatedTools.astro';
+import { Icon } from 'astro-icon/components';
+import { comparisons, getRelatedComparisons, type Comparison } from '~/data/comparisons';
+
+export function getStaticPaths() {
+  return comparisons.map((comp) => ({
+    params: { slug: comp.slug },
+    props: { comp },
+  }));
+}
+
+interface Props {
+  comp: Comparison;
+}
+
+const { comp } = Astro.props;
+const relatedComparisons = getRelatedComparisons(comp.relatedComparisons);
+
+const metadata = {
+  title: `${comp.termA} vs ${comp.termB}: Key Differences Explained | CPM Calculator`,
+  description: comp.description,
+  canonical: `https://cpmcalculator.online/compare/${comp.slug}`,
+  robots: { index: true, follow: true },
+  openGraph: {
+    type: 'article',
+    url: `https://cpmcalculator.online/compare/${comp.slug}`,
+    title: comp.title,
+    description: comp.description,
+  },
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Breadcrumb -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 md:pt-[96px]">
+    <nav class="flex items-center gap-2 text-sm text-gray-500" aria-label="Breadcrumb">
+      <a href="/" class="hover:text-white transition-colors">Home</a>
+      <Icon name="tabler:chevron-right" class="w-4 h-4" />
+      <a href="/compare" class="hover:text-white transition-colors">Compare</a>
+      <Icon name="tabler:chevron-right" class="w-4 h-4" />
+      <span class="text-gray-300">{comp.termA} vs {comp.termB}</span>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative not-prose overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute left-1/3 top-0 w-[800px] h-[400px] bg-blue-600/15 blur-[120px] rounded-full mix-blend-screen"></div>
+      <div class="absolute right-1/3 top-0 w-[800px] h-[400px] bg-purple-600/15 blur-[120px] rounded-full mix-blend-screen"></div>
+    </div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="py-10 md:py-14 text-center">
+        <div class="flex items-center justify-center gap-4 mb-6">
+          <span class="text-4xl md:text-6xl font-black bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+            {comp.termA}
+          </span>
+          <span class="text-2xl md:text-4xl font-black text-gray-600">vs</span>
+          <span class="text-4xl md:text-6xl font-black bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
+            {comp.termB}
+          </span>
+        </div>
+        <h1 class="text-xl md:text-2xl font-semibold text-gray-300 max-w-3xl mx-auto leading-snug">
+          {comp.title}
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="px-4 sm:px-6 mx-auto lg:px-8 max-w-6xl pb-20">
+    <div class="grid lg:grid-cols-3 gap-8">
+
+      <!-- Main column -->
+      <div class="lg:col-span-2 space-y-8">
+
+        <!-- Intro -->
+        <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8">
+          <p class="text-gray-300 leading-relaxed text-lg">{comp.intro}</p>
+        </div>
+
+        <!-- Quick definitions -->
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div class="bg-gradient-to-br from-blue-500/10 to-transparent rounded-3xl border border-blue-500/20 p-6">
+            <div class="text-xs font-bold text-blue-400 tracking-widest uppercase mb-2">What is {comp.termA}?</div>
+            <p class="text-gray-300 leading-relaxed">{comp.termADefinition}</p>
+            {comp.termASlug && (
+              <a href={`/glossary/${comp.termASlug}`} class="inline-flex items-center gap-1 mt-4 text-xs text-blue-400 hover:text-blue-300 transition-colors">
+                Full {comp.termA} definition
+                <Icon name="tabler:arrow-up-right" class="w-3.5 h-3.5" />
+              </a>
+            )}
+          </div>
+          <div class="bg-gradient-to-br from-purple-500/10 to-transparent rounded-3xl border border-purple-500/20 p-6">
+            <div class="text-xs font-bold text-purple-400 tracking-widest uppercase mb-2">What is {comp.termB}?</div>
+            <p class="text-gray-300 leading-relaxed">{comp.termBDefinition}</p>
+            {comp.termBSlug && (
+              <a href={`/glossary/${comp.termBSlug}`} class="inline-flex items-center gap-1 mt-4 text-xs text-purple-400 hover:text-purple-300 transition-colors">
+                Full {comp.termB} definition
+                <Icon name="tabler:arrow-up-right" class="w-3.5 h-3.5" />
+              </a>
+            )}
+          </div>
+        </div>
+
+        <!-- Key differences table -->
+        <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-8">
+          <div class="flex items-center mb-6">
+            <Icon name="tabler:table" class="w-7 h-7 text-blue-400 mr-3" />
+            <h2 class="text-2xl font-bold text-white">{comp.termA} vs {comp.termB}: Key Differences</h2>
+          </div>
+
+          <!-- Table header -->
+          <div class="grid grid-cols-3 gap-3 mb-3 px-2">
+            <div class="text-xs font-bold text-gray-500 uppercase tracking-widest">Aspect</div>
+            <div class="text-xs font-bold text-blue-400 uppercase tracking-widest">{comp.termA}</div>
+            <div class="text-xs font-bold text-purple-400 uppercase tracking-widest">{comp.termB}</div>
+          </div>
+
+          <div class="space-y-2">
+            {comp.differences.map((diff, i) => (
+              <div class={`grid grid-cols-3 gap-3 p-3 rounded-xl ${i % 2 === 0 ? 'bg-white/5' : 'bg-transparent'}`}>
+                <div class="text-sm font-medium text-gray-400">{diff.aspect}</div>
+                <div class="text-sm text-gray-200">{diff.a}</div>
+                <div class="text-sm text-gray-200">{diff.b}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- When to use each -->
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-6">
+            <h3 class="text-lg font-bold text-blue-300 mb-4 flex items-center gap-2">
+              <Icon name="tabler:circle-check" class="w-5 h-5" />
+              When to use {comp.termA}
+            </h3>
+            <ul class="space-y-3">
+              {comp.whenToUseA.map((point) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="flex-shrink-0 w-4 h-4 rounded-full bg-blue-500/30 flex items-center justify-center mt-0.5">
+                    <Icon name="tabler:check" class="w-2.5 h-2.5 text-blue-300" />
+                  </span>
+                  <span class="text-sm text-gray-300">{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-6">
+            <h3 class="text-lg font-bold text-purple-300 mb-4 flex items-center gap-2">
+              <Icon name="tabler:circle-check" class="w-5 h-5" />
+              When to use {comp.termB}
+            </h3>
+            <ul class="space-y-3">
+              {comp.whenToUseB.map((point) => (
+                <li class="flex items-start gap-2.5">
+                  <span class="flex-shrink-0 w-4 h-4 rounded-full bg-purple-500/30 flex items-center justify-center mt-0.5">
+                    <Icon name="tabler:check" class="w-2.5 h-2.5 text-purple-300" />
+                  </span>
+                  <span class="text-sm text-gray-300">{point}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Verdict -->
+        <div class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-3xl border border-purple-500/20 p-8">
+          <div class="flex items-center mb-4">
+            <Icon name="tabler:award" class="w-7 h-7 text-purple-400 mr-3" />
+            <h2 class="text-2xl font-bold text-white">Verdict</h2>
+          </div>
+          <p class="text-gray-200 leading-relaxed text-lg">{comp.verdict}</p>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="space-y-6">
+
+        <!-- Calculator CTA -->
+        {comp.relatedCalculator && (
+          <div class="bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-3xl border border-purple-500/30 p-6">
+            <Icon name="tabler:calculator" class="w-8 h-8 text-purple-400 mb-3" />
+            <h3 class="text-lg font-bold text-white mb-2">Try the Calculator</h3>
+            <p class="text-sm text-gray-400 mb-4">Put these metrics to work with our free tool.</p>
+            <a
+              href={comp.relatedCalculator.href}
+              class="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold text-sm hover:opacity-90 transition-opacity"
+            >
+              {comp.relatedCalculator.label}
+              <Icon name="tabler:arrow-right" class="w-4 h-4" />
+            </a>
+          </div>
+        )}
+
+        <!-- Glossary links -->
+        <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-6">
+          <h3 class="text-base font-bold text-white mb-4 flex items-center gap-2">
+            <Icon name="tabler:book" class="w-5 h-5 text-purple-400" />
+            Learn More
+          </h3>
+          <div class="space-y-2">
+            {comp.termASlug && (
+              <a
+                href={`/glossary/${comp.termASlug}`}
+                class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5 hover:border-blue-500/30 hover:bg-blue-500/10 transition-all group"
+              >
+                <span class="text-sm text-gray-300 group-hover:text-white transition-colors">What is {comp.termA}?</span>
+                <Icon name="tabler:chevron-right" class="w-4 h-4 text-gray-600 group-hover:text-blue-400 transition-colors" />
+              </a>
+            )}
+            {comp.termBSlug && (
+              <a
+                href={`/glossary/${comp.termBSlug}`}
+                class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5 hover:border-purple-500/30 hover:bg-purple-500/10 transition-all group"
+              >
+                <span class="text-sm text-gray-300 group-hover:text-white transition-colors">What is {comp.termB}?</span>
+                <Icon name="tabler:chevron-right" class="w-4 h-4 text-gray-600 group-hover:text-purple-400 transition-colors" />
+              </a>
+            )}
+            <a
+              href="/glossary"
+              class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5 hover:border-white/20 hover:bg-white/5 transition-all group"
+            >
+              <span class="text-sm text-gray-300 group-hover:text-white transition-colors">Full Glossary</span>
+              <Icon name="tabler:chevron-right" class="w-4 h-4 text-gray-600 group-hover:text-white transition-colors" />
+            </a>
+          </div>
+        </div>
+
+        <!-- More comparisons -->
+        {relatedComparisons.length > 0 && (
+          <div class="bg-white/5 backdrop-blur-2xl rounded-3xl border border-white/10 p-6">
+            <h3 class="text-base font-bold text-white mb-4 flex items-center gap-2">
+              <Icon name="tabler:arrows-exchange" class="w-5 h-5 text-blue-400" />
+              More Comparisons
+            </h3>
+            <div class="space-y-2">
+              {relatedComparisons.map((related) => (
+                <a
+                  href={`/compare/${related.slug}`}
+                  class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5 hover:border-blue-500/30 hover:bg-blue-500/10 transition-all group"
+                >
+                  <span class="text-sm font-medium text-gray-300 group-hover:text-white transition-colors">
+                    {related.termA} vs {related.termB}
+                  </span>
+                  <Icon name="tabler:chevron-right" class="w-4 h-4 text-gray-600 group-hover:text-blue-400 transition-colors" />
+                </a>
+              ))}
+              <a
+                href="/compare"
+                class="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5 hover:border-white/20 transition-all group"
+              >
+                <span class="text-sm text-gray-400 group-hover:text-white transition-colors">All comparisons</span>
+                <Icon name="tabler:chevron-right" class="w-4 h-4 text-gray-600 group-hover:text-white transition-colors" />
+              </a>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+
+    <!-- Related Tools -->
+    <div class="mt-12">
+      <RelatedTools currentPage={`/compare/${comp.slug}`} />
+    </div>
+  </section>
+</Layout>

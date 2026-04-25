@@ -29,6 +29,16 @@ export const headerData = {
 export const footerData = {
   links: [
     {
+      title: 'Learn',
+      links: [
+        { text: 'Advertising Glossary', href: '/glossary' },
+        { text: 'CPM vs CPC', href: '/compare/cpm-vs-cpc' },
+        { text: 'ROAS vs ROI', href: '/compare/roas-vs-roi' },
+        { text: 'CAC vs LTV', href: '/compare/cac-vs-ltv' },
+        { text: 'All Comparisons', href: '/compare' },
+      ],
+    },
+    {
       title: 'Blog',
       links: [
         { text: 'Use case Excel', href: '/cpm-formula-excel' },
@@ -37,7 +47,7 @@ export const footerData = {
       ],
     },
     {
-      title: 'About', 
+      title: 'About',
       links: [
         { text: 'About', href: '/about' },
         { text: 'Top 10 Marketing Books', href: '/top-10-marketing-books' },
